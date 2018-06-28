@@ -8,6 +8,11 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+import { LoginProvider } from '../providers/login/login';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { IonicPageModule } from 'ionic-angular/module';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicPageModule.forChild(LoginPage),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,7 +36,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    LoginProvider,
+    HttpClient,
+    Storage
   ]
 })
-export class AppModule {}
+export class AppModule { }
