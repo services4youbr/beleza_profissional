@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Login } from './LoginInterface';
 
 /*
   Generated class for the LoginProvider provider.
@@ -8,11 +9,6 @@ import { Storage } from '@ionic/storage';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-
-export interface Login {
-  login: string,
-  senha: string
-}
 
 @Injectable()
 export class LoginProvider {
