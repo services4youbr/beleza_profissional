@@ -12,6 +12,8 @@ import { LoginProvider } from '../providers/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginPageModule } from '../pages/login/login.module';
+import { DadosPessoaisProvider } from '../providers/dados-pessoais/dados-pessoais';
+import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { LoginPageModule } from '../pages/login/login.module';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule,
+    DadosPessoaisPageModule,
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -37,7 +40,8 @@ import { LoginPageModule } from '../pages/login/login.module';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
-    HttpClient
+    HttpClient,
+    DadosPessoaisProvider
   ]
 })
 export class AppModule { }
