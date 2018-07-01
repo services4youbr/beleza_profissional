@@ -6,6 +6,8 @@ import { Login } from './LoginInterface';
 @Injectable()
 export class LoginProvider {
 
+  public loginPrefix = 'login-';
+
   public login: Login;
 
   constructor(public http: HttpClient, private storage: Storage) {
@@ -13,7 +15,7 @@ export class LoginProvider {
   }
 
   public logar(login: string, senha: string) {
-    return this.storage.get(login).then(l => {
+    return this.storage.get(`${this.loginPrefix}`).then(l => {
       if (!l) {
         throw new Error('Sem login.');
       }
@@ -23,7 +25,11 @@ export class LoginProvider {
   }
 
   public cadastrar(login: string, senha: string) {
-    this.storage.set(login, JSON.stringify({ login: login, senha: senha }));
+    return this.storage.set(`${this.loginPrefix}`, JSON.stringify({ login: login, senha: senha })).then(l => this.logar(login, senha));
+  }
+
+  public usuarioLogado() {
+    return this.storage.get(`${this.loginPrefix}`);
   }
 
 }

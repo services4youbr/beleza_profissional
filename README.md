@@ -4,6 +4,7 @@
 + [Tutorial Ionic com PWA](https://blog.ionicframework.com/how-to-make-pwas-with-ionic/)
 + [Ionic cli](https://ionicframework.com/docs/cli/generate/)
 + [Debug](http://www.damirscorner.com/blog/posts/20161122-DebuggingIonic2AppsInChromeFromVisualStudioCode.html)
++ [Calendar](https://demo.mobiscroll.com/angular/calendar/#)
 
 ## Requisitos iniciais
 Precisamos seguir o seguinte fluxo:
