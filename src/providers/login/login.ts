@@ -3,13 +3,6 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Login } from './LoginInterface';
 
-/*
-  Generated class for the LoginProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-
 @Injectable()
 export class LoginProvider {
 
