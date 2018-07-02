@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController, App, ViewControll
 import { LoginProvider } from '../../providers/login/login';
 import { HomePage } from '../home/home';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

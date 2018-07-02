@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { FormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -15,6 +16,7 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { DadosPessoaisProvider } from '../providers/dados-pessoais/dados-pessoais';
 import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.module';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,8 +28,8 @@ import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule,
-    DadosPessoaisPageModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,6 +1,6 @@
 {
   "name": "beleza_profissional",
-  "app_id": "",
+  "app_id": "3a6ba356",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
