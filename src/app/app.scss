@@ -1,21 +1,15 @@
-.buttons{
-    margin-top: 70px;
-}
 .bn-page{
-    background: url(../assets/imgs/black-woman.jpg) no-repeat center center;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     height: 100vh;
-    background-size: cover;
-    background-blend-mode: screen;
-    background-color: #cccccc;
-
-    .scroll-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 }
 .login-box__header{
+    margin-top: 50px;
+}
+.login-box__subheader{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,4 +20,17 @@
     height: 80px;
     background-color: #ffffff;
     padding: 20px;
+}
+.bg-login{
+    background: url(../assets/imgs/black-woman.jpg) no-repeat center center;
+    background-size: cover;
+    background-blend-mode: screen;
+    background-color: #cccccc;
+}
+.buttons{
+    margin-top: 70px;
+    
+    button{
+        margin: 10px 0;
+    }
 }
