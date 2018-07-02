@@ -1,25 +1,23 @@
 <ion-content padding class="bg-login">
-  <div ion-fixed>
 
-    <div class="container">
-      <div class="login-box__header">
-        <img src="../../assets/imgs/logo.png" alt="Services 4 You" class="img-responsive">
-      </div>
-      <div class="login-box__subheader">
-        <img src="../../assets/icon/man-user.svg" alt="Faça seu login" class="circle login-box__icon">
-      </div>
-        <ion-label stacked>Login</ion-label>
-        <ion-input type="text" [(ngModel)]="login" name="login"></ion-input>
-      
-    
-        <ion-label stacked>Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
-      
-        <div class="buttons">
-          <button ion-button block (click)="logar()">Logar</button>
-          <button ion-button block (click)="cadastrar()">Cadastro</button>
-        </div>
-      
+  <div class="container">
+    <div class="login-box__header">
+      <img src="../../assets/imgs/logo.png" alt="Services 4 You" class="img-responsive">
     </div>
+    <div class="login-box__subheader">
+      <img src="../../assets/icon/man-user.svg" alt="Faça seu login" class="circle login-box__icon">
+    </div>
+      <ion-label stacked>Login</ion-label>
+      <ion-input type="text" [(ngModel)]="login" name="login"></ion-input>
+    
+  
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
+    
+      <div class="buttons">
+        <button ion-button block (click)="logar()">Logar</button>
+        <button ion-button block (click)="cadastrar()">Cadastro</button>
+      </div>
+    
   </div>
 </ion-content>
