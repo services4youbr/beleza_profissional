@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, LOCALE_ID } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginPageModule } from '../pages/login/login.module';
 import { DadosPessoaisProvider } from '../providers/dados-pessoais/dados-pessoais';
 import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.module';
+import { NgCalendarModule } from 'ionic2-calendar';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.
     IonicModule.forRoot(MyApp),
     LoginPageModule,
     IonicStorageModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgCalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +48,8 @@ import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
     HttpClient,
-    DadosPessoaisProvider
+    DadosPessoaisProvider,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })
 export class AppModule { }
