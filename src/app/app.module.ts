@@ -18,6 +18,8 @@ import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.
 import { NgCalendarModule } from 'ionic2-calendar';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { EventoPageModule } from '../pages/evento/evento.module';
+import { EventoProvider } from '../providers/evento/evento';
 
 registerLocaleData(localePt);
 
@@ -34,7 +36,8 @@ registerLocaleData(localePt);
     LoginPageModule,
     IonicStorageModule.forRoot(),
     FormsModule,
-    NgCalendarModule
+    NgCalendarModule,
+    EventoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +52,8 @@ registerLocaleData(localePt);
     LoginProvider,
     HttpClient,
     DadosPessoaisProvider,
-    { provide: LOCALE_ID, useValue: 'pt-BR' }
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    EventoProvider
   ]
 })
 export class AppModule { }

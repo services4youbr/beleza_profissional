@@ -3,14 +3,9 @@ import { NavController } from 'ionic-angular';
 import { LoginProvider } from '../../providers/index';
 import { CalendarComponent } from "ionic2-calendar/calendar";
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Evento } from '../evento/evento.model';
+import { EventoPage } from '../evento/evento';
 
-export interface Event {
-  title: string,
-  startTime: Date,
-  endTime: Date,
-  allDay: boolean,
-
-}
 
 @Component({
   selector: 'page-home',
@@ -21,15 +16,16 @@ export class HomePage implements OnInit {
 
   @ViewChild(CalendarComponent) calendar: CalendarComponent;
 
-  public eventSource: Event[] = [];
+  public eventSource: Evento[] = [];
 
+  public diaSelecionado: Date;
 
   public onTimeSelected = (ev: { selectedTime: Date, events: any[] }) => {
-
+    this.diaSelecionado = ev.selectedTime;
   };
 
-  public onEventSelected = (event) => {
-    console.log(event.title);
+  public onEventSelected = (event) => { 
+    this.navCtrl.push(EventoPage, { evento: event, diaSelecionado: this.diaSelecionado });
   };
 
   constructor(public navCtrl: NavController, public loginProvider: LoginProvider) {
