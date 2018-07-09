@@ -1,5 +1,8 @@
 # App de beleza - profissional
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/services4youbr/beleza_profissional.svg?columns=all)](https://waffle.io/services4youbr/beleza_profissional)
+
+
 + [Site oficial do ionic](https://ionicframework.com/getting-started)
 + [Tutorial Ionic com PWA](https://blog.ionicframework.com/how-to-make-pwas-with-ionic/)
 + [Ionic cli](https://ionicframework.com/docs/cli/generate/)
