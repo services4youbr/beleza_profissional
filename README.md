@@ -1,5 +1,6 @@
 # App de beleza - profissional
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/70388dce5167425998b2a792ee459f2a)](https://app.codacy.com/app/rodrigo.freitas/beleza_profissional?utm_source=github.com&utm_medium=referral&utm_content=services4youbr/beleza_profissional&utm_campaign=badger)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/services4youbr/beleza_profissional.svg?columns=all)](https://waffle.io/services4youbr/beleza_profissional)
 
 
