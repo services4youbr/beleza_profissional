@@ -14,7 +14,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginPageModule } from '../pages/login/login.module';
 import { DadosPessoaisProvider } from '../providers/dados-pessoais/dados-pessoais';
-import { DadosPessoaisPageModule } from '../pages/dados-pessoais/dados-pessoais.module';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
