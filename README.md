@@ -11,6 +11,7 @@
 + [Ionic cli](https://ionicframework.com/docs/cli/generate/)
 + [Debug](http://www.damirscorner.com/blog/posts/20161122-DebuggingIonic2AppsInChromeFromVisualStudioCode.html)
 + [Calendar](https://www.npmjs.com/package/ionic2-calendar)
++ [Branchs](https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-B%C3%A1sico-de-Branch-e-Merge)
 
 ## Requisitos iniciais
 Precisamos seguir o seguinte fluxo:
