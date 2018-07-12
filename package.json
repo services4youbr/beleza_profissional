@@ -1,8 +1,8 @@
 {
   "name": "beleza_profissional",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Services4You",
+  "homepage": "http://www.services4you.com.br",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -40,7 +40,7 @@
     "@ionic/app-scripts": "3.1.10",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project",
+  "description": "Afro bela",
   "config": {
     "ionic_source_map": "source-map"
   }
