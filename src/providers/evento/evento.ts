@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Evento } from '../../pages/evento/evento.model';
+import { Storage } from '../../../node_modules/@ionic/storage';
 
 /*
   Generated class for the EventoProvider provider.
