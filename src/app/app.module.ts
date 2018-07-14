@@ -19,6 +19,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { EventoPageModule } from '../pages/evento/evento.module';
 import { EventoProvider } from '../providers/evento/evento';
+import { AirbrakeErrorHandler } from '../erroHandler/AirBrakeErrorHandler';
 
 registerLocaleData(localePt);
 
@@ -48,6 +49,7 @@ registerLocaleData(localePt);
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: ErrorHandler, useClass: AirbrakeErrorHandler },
     LoginProvider,
     HttpClient,
     DadosPessoaisProvider,
