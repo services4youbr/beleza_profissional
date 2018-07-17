@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 .bn-page{
     display: flex;
     flex-direction: column;
@@ -6,31 +9,23 @@
     align-content: center;
     height: 100vh;
 }
-.login-box__header{
-    margin-top: 50px;
+.content-md hr{
+    background-color: #d2cac4;
+    border: none;
+    width: 100%;
+    margin-bottom: 30px;
 }
-.login-box__subheader{
+.input{
+    margin-bottom: 20px
+}
+.login-box{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 80%;
+    margin: 0 auto;
 }
-.login-box__icon{
-    width: 80px;
-    height: 80px;
-    background-color: #ffffff;
-    padding: 20px;
-}
-.bg-login{
-    background: url(../assets/imgs/black-woman.jpg) no-repeat center center;
-    background-size: cover;
-    background-blend-mode: screen;
-    background-color: #cccccc;
-}
-.buttons{
-    margin-top: 70px;
-    
-    button{
-        margin: 10px 0;
-    }
+.login-box__inputs{
+    width: 100%;
 }
