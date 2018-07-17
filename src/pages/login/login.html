@@ -1,23 +1,22 @@
-<ion-content padding class="bg-login">
+<ion-content class="bg-login">
 
-  <div class="container">
+
     <div class="login-box__header">
-      <img src="../../assets/imgs/logo.png" alt="Services 4 You" class="img-responsive">
+      <img src="../../assets/imgs/bg-login.jpg" alt="Afrobella" class="img-responsive">
     </div>
-    <div class="login-box__subheader">
-      <img src="../../assets/icon/man-user.svg" alt="Faça seu login" class="circle login-box__icon">
-    </div>
-      <ion-label stacked>Login</ion-label>
-      <ion-input type="text" [(ngModel)]="login" name="login"></ion-input>
-    
-  
-      <ion-label stacked>Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
-    
-      <div class="buttons">
-        <button ion-button block (click)="logar()">Logar</button>
-        <button ion-button block (click)="cadastrar()">Cadastro</button>
+    <div class="login-box">
+      <p>Entre com</p>
+
+      <hr>
+      <div class="login-box__inputs">
+        <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Login"></ion-input>
+        <ion-input type="password" [(ngModel)]="senha" name="senha" placeholder="Senha"></ion-input>
+        
       </div>
     
-  </div>
+      <!--<div class="buttons">
+        <button ion-button block (click)="logar()">Logar</button>
+        <button ion-button block (click)="cadastrar()">Cadastro</button>
+      </div>-->
+    </div>
 </ion-content>
