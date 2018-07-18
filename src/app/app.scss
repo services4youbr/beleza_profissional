@@ -9,11 +9,20 @@ body{
     align-content: center;
     height: 100vh;
 }
+.buttons{
+    width: 100%;
+}
 .content-md hr{
     background-color: #d2cac4;
     border: none;
     width: 100%;
     margin-bottom: 30px;
+}
+.button-md{
+    background: #f0d264 !important;
+}
+.default-text-color{
+    color: #f0d264 !important;
 }
 .input{
     margin-bottom: 20px
@@ -26,6 +35,17 @@ body{
     width: 80%;
     margin: 0 auto;
 }
+.login-box__facebook{
+    width: 42px;
+    height: 41px;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 .login-box__inputs{
     width: 100%;
+}
+.login-box__text{
+    color: #a49288;
+    margin-bottom: 0;
 }
