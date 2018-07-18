@@ -5,6 +5,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/90ef04eec9dc45d1989301cd86df6ccb)](https://www.codacy.com/app/rodrigo.freitas/beleza_profissional?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=services4youbr/beleza_profissional&amp;utm_campaign=Badge_Grade)
 
+[Dev URL](http://belezapro.services4you.com.br/)
 
 + [Site oficial do ionic](https://ionicframework.com/getting-started)
 + [Tutorial Ionic com PWA](https://blog.ionicframework.com/how-to-make-pwas-with-ionic/)
