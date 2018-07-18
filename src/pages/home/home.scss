@@ -1,3 +1,15 @@
 page-home {
-
+    ion-row{
+        width: 100%;
+        .financeiro{
+            text-align: left;
+        }
+    }
+    img.imagem_perfil{
+        width: 239px;
+    }
+    ion-card.imagem_perfil{
+        width: 100%;
+        text-align: -webkit-center;
+    }
 }

@@ -20,6 +20,7 @@ import localePt from '@angular/common/locales/pt';
 import { EventoPageModule } from '../pages/evento/evento.module';
 import { EventoProvider } from '../providers/evento/evento';
 import { AirbrakeErrorHandler } from '../erroHandler/AirBrakeErrorHandler';
+import { CalendarioPageModule } from '../pages/calendario/calendario.module';
 
 registerLocaleData(localePt);
 
@@ -37,7 +38,8 @@ registerLocaleData(localePt);
     IonicStorageModule.forRoot(),
     FormsModule,
     NgCalendarModule,
-    EventoPageModule
+    EventoPageModule,
+    CalendarioPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

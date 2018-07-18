@@ -8,9 +8,80 @@
 </ion-header>
 
 <ion-content padding>
-  <calendar #calendar [eventSource]="eventSource" (onEventSelected)="onEventSelected($event)" [locale]="calendar.locale" [currentDate]="calendar.currentDate"
-  (onTimeSelected)="onTimeSelected($event)" step="30">
-  </calendar>
+  <ion-card class="imagem_perfil">
+    <img class="imagem_perfil" src="assets/imgs/black-woman.jpg" />
+    <ion-card-content>
+      <ion-card-title>
+        Profissional 1
+      </ion-card-title>
+      <p>
+        <button ion-button icon-only>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card (click)="navegarHoje()">
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+          <ion-card-header>
+            Hoje
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{eventoProvider.countEventosHoje()}}
+          </ion-card-content>
+        
+        </ion-card>
+
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+
+          <ion-card-header>
+            Amanhã
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{eventoProvider.countEventosAmanha()}}
+          </ion-card-content>
+        
+        </ion-card>
+
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+
+          <ion-card-header>
+            Próximos
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{eventoProvider.countEventosMaiorIgualHoje()}}
+          </ion-card-content>
+        
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+
+          <ion-card-header>
+            Finanças
+          </ion-card-header>
+        
+          <ion-card-content>
+            <p class="financeiro">R$ 207,23</p>
+          </ion-card-content>
+        
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
