@@ -23,7 +23,8 @@ export class LoginPage {
 
     this.loginProvider.usuarioLogado().then(l => {
       if (l) {
-        this.appCtrl.getRootNav().push(HomePage)
+        this.navCtrl.push(HomePage, {
+        });
       }
     });
   }
@@ -55,8 +56,8 @@ export class LoginPage {
     });
     alert.present();
     alert.onDidDismiss((data, role) => {
-      this.viewCtrl.dismiss();
-      this.appCtrl.getRootNav().push(HomePage);
+      this.navCtrl.push(HomePage, {
+      });
     });
   }
 
@@ -68,8 +69,9 @@ export class LoginPage {
     });
     alert.present();
     alert.onDidDismiss((data, role) => {
-      this.viewCtrl.dismiss();
-      this.appCtrl.getRootNav().push(HomePage);
+      this.navCtrl.push(HomePage, {
+      });
+     
     });
   }
 
