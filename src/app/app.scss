@@ -9,11 +9,20 @@ body{
     align-content: center;
     height: 100vh;
 }
+.buttons{
+    width: 100%;
+}
 .content-md hr{
     background-color: #d2cac4;
     border: none;
     width: 100%;
     margin-bottom: 30px;
+}
+.button-md{
+    background: #f0d264 !important;
+}
+.default-text-color{
+    color: #f0d264 !important;
 }
 .input{
     margin-bottom: 20px
