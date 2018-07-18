@@ -29,6 +29,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700,900" rel="stylesheet">
   <link href="build/main.css" rel="stylesheet">
 
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+
 </head>
 <body>
 
@@ -45,6 +47,15 @@
 
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
+
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "f4899d0b-1168-44e7-9aac-b8e9b693927c",
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -31,7 +31,7 @@ export class LoginPage {
 
   public logar() {
     this.loginProvider.logar(this.login, this.senha).then(l => {
-      this.showLogin(this.loginProvider.login.login);
+      this.showLogin(this.login);
     }).catch(e => {
       this.showFalhaLogin();
     });
