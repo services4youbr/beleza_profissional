@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, App, ViewController } from 'ionic-angular';
 import { LoginProvider } from '../../providers/login/login';
 import { HomePage } from '../home/home';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 
 @IonicPage()
@@ -16,17 +17,18 @@ export class LoginPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-    private loginProvider: LoginProvider, public alertCtrl: AlertController, public appCtrl: App) {
+    private loginProvider: LoginProvider, public alertCtrl: AlertController, public appCtrl: App,
+    public authService: AuthServiceProvider) {
   }
 
   ionViewDidLoad() {
 
-    this.loginProvider.usuarioLogado().then(l => {
-      if (l) {
-        this.navCtrl.push(HomePage, {
-        });
-      }
-    });
+    // this.loginProvider.usuarioLogado().then(l => {
+    //   if (l) {
+    //     this.navCtrl.push(HomePage, {
+    //     });
+    //   }
+    // });
   }
 
   public logar() {
@@ -71,7 +73,7 @@ export class LoginPage {
     alert.onDidDismiss((data, role) => {
       this.navCtrl.push(HomePage, {
       });
-     
+
     });
   }
 
@@ -81,4 +83,61 @@ export class LoginPage {
     });
   }
 
+  tryRegister() {
+    this.authService.doRegister({ login: this.login, senha: this.senha })
+      .then(res => {
+        console.log(res);
+        this.showCadastro(this.login);
+      }, err => {
+        if (err && err.code === 'auth/weak-password') {
+          const alert = this.alertCtrl.create({
+            title: 'Senha fraca!',
+            subTitle: `Sua senha deve ter pelo ao menos 6 caracteres!`,
+            buttons: ['OK']
+          });
+          alert.present();
+        } else if (err && err.code === 'auth/invalid-email') {
+          const alert = this.alertCtrl.create({
+            title: 'Email inválido!',
+            subTitle: `Email em formato inválido!`,
+            buttons: ['OK']
+          });
+          alert.present();
+        } else {
+          this.showFalhaLogin();
+        }
+        console.log(err);
+      })
+  }
+
+  tryLogin() {
+    this.authService.doLogin({ login: this.login, senha: this.senha })
+      .then(res => {
+        console.log(res);
+        this.showLogin(this.login);
+      }, err => {
+        //auth/weak-password
+        //auth/invalid-email
+        console.log(err);
+        this.showFalhaLogin();
+      })
+  }
+
+  tryFacebookLogin() {
+    this.authService.doFacebookLogin()
+      .then(res => {
+        console.log(res);
+        this.showCadastro(res.additionalUserInfo.profile.first_name);
+      }, err => {
+        if (err && err.code === 'auth/account-exists-with-different-credential') {
+          this.showLogin(err.email);
+        } else {
+          this.showFalhaLogin();
+        }
+        console.log(err);
+      })
+  }
+
+
 }
+

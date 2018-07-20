@@ -9,10 +9,10 @@
 
 <ion-content padding>
   <ion-card class="imagem_perfil">
-    <img class="imagem_perfil" src="assets/imgs/black-woman.jpg" />
+    <img class="imagem_perfil" src="{{photoUrl}}" />
     <ion-card-content>
       <ion-card-title>
-        Profissional 1
+        {{usuario ? usuario.displayName : ''}}
       </ion-card-title>
       <p>
         <button ion-button icon-only>

@@ -7,6 +7,7 @@ import { Evento } from '../evento/evento.model';
 import { EventoPage } from '../evento/evento';
 import { EventoProvider } from '../../providers/evento/evento';
 import { CalendarioPage } from '../calendario/calendario';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 
 @Component({
@@ -15,14 +16,25 @@ import { CalendarioPage } from '../calendario/calendario';
 })
 export class HomePage implements OnInit {
 
+  public usuario: any;
+  public photoUrl: string;
 
   constructor(public navCtrl: NavController, public loginProvider: LoginProvider, public eventoProvider: EventoProvider,
-    public appCtrl: App, public navParams: NavParams) {
+    public appCtrl: App, public navParams: NavParams, public authService: AuthServiceProvider) {
 
   }
 
   ngOnInit(): void {
+    this.authService.getUser().subscribe(u => {
+      if (u) {
+        this.usuario = u
+        this.photoUrl =  this.usuario.photoURL + '/picture?height=500';
 
+        console.log(this.usuario);
+      } else {
+        this.photoUrl = 'assets/imgs/black-woman.jpg';
+      }
+    });
   }
 
   public navegarHoje() {

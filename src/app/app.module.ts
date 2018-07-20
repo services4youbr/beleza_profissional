@@ -21,6 +21,11 @@ import { EventoPageModule } from '../pages/evento/evento.module';
 import { EventoProvider } from '../providers/evento/evento';
 import { AirbrakeErrorHandler } from '../erroHandler/AirBrakeErrorHandler';
 import { CalendarioPageModule } from '../pages/calendario/calendario.module';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 registerLocaleData(localePt);
 
@@ -39,7 +44,10 @@ registerLocaleData(localePt);
     FormsModule,
     NgCalendarModule,
     EventoPageModule,
-    CalendarioPageModule
+    CalendarioPageModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule // imports firebase/auth, only needed for auth features
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +64,8 @@ registerLocaleData(localePt);
     HttpClient,
     DadosPessoaisProvider,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    EventoProvider
+    EventoProvider,
+    AuthServiceProvider
   ]
 })
 export class AppModule { }

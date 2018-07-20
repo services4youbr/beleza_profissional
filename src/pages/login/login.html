@@ -1,24 +1,30 @@
 <ion-content class="bg-login">
 
 
-    <div class="login-box__header">
-      <img src="../../assets/imgs/bg-login.jpg" alt="Afrobella" class="img-responsive">
-    </div>
-    <div class="login-box">
-      <p class="login-box__text">Entre com</p>
-      <a href="#"><img class="login-box__facebook" src="../../assets/imgs/facebook.png" alt="Login com sua conta do Facebook"></a>
+  <div class="login-box__header">
+    <img src="../../assets/imgs/bg-login.jpg" alt="Afrobella" class="img-responsive">
+  </div>
+  <div class="login-box">
+    <p class="login-box__text">Entre com</p>
+    <a href="#" (click)="tryFacebookLogin()">
+      <img class="login-box__facebook" src="../../assets/imgs/facebook.png" alt="Login com sua conta do Facebook">
+    </a>
 
-      <hr>
-      <div class="login-box__inputs">
-        <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Login"></ion-input>
-        <ion-input type="password" [(ngModel)]="senha" name="senha" placeholder="Senha"></ion-input>
-        
-      </div>
-    
-      <div class="buttons">
-        <button ion-button block (click)="logar()" class="default-color">Logar</button>
-        <p>Não possui login? <span class="default-text-color" (click)="cadastrar()">Cadastre-se</span></p>
-        
-      </div>
+    <hr>
+
+    <div class="login-box__inputs">
+      <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Login"></ion-input>
+      <ion-input type="password" [(ngModel)]="senha" name="senha" placeholder="Senha"></ion-input>
+
     </div>
+
+    <div class="buttons">
+      <button ion-button block (click)="tryLogin()" class="default-color" type="submit">Logar</button>
+      <p>Não possui login?
+        <span class="default-text-color" (click)="tryRegister()">Cadastre-se</span>
+      </p>
+
+    </div>
+
+  </div>
 </ion-content>

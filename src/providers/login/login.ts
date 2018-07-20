@@ -8,13 +8,23 @@ export class LoginProvider {
 
   public loginPrefix = 'login-';
 
-  public login: Login;
+  public login: any;
 
   constructor(public http: HttpClient, private storage: Storage) {
     this.login = null
   }
 
   public logar(login: string, senha: string) {
+    return this.storage.get(`${this.loginPrefix}`).then(l => {
+      if (!l) {
+        throw new Error('Sem login.');
+      }
+      this.login = l;
+      return this.login;
+    });
+  }
+
+  public logarFacebook(user: any) {
     return this.storage.get(`${this.loginPrefix}`).then(l => {
       if (!l) {
         throw new Error('Sem login.');
