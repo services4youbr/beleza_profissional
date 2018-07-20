@@ -3,63 +3,56 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>AFROBELLA</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card class="imagem_perfil">
-    <img class="imagem_perfil" src="{{photoUrl}}" />
-    <ion-card-content>
-      <ion-card-title>
-        {{usuario ? usuario.displayName : ''}}
-      </ion-card-title>
-      <p>
-        <button ion-button icon-only>
-          <ion-icon name="camera"></ion-icon>
-        </button>
-      </p>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="content-inside" padding>
+  <div class="imagem-perfil">
+    <img class="imagem-perfil__image circle" src="{{photoUrl}}" />
+    <p class="imagem-perfil__icon circle">
+      <button ion-button icon-only>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </p>
+    <div class="imagem-perfil__title">{{usuario ? usuario.displayName : ''}}</div>
+    <div class="imagem-perfil__subtitle">Maquiadora</div>
+  </div>
+
   <ion-grid>
     <ion-row>
       <ion-col col-4>
-        <ion-card (click)="navegarHoje()">
-
+        <ion-card class="eventos-home --hoje" (click)="navegarHoje()">
           <ion-card-header>
+            <span>{{eventoProvider.countEventosHoje()}}</span>
+            <img src="../../assets/icon/schedule-button.svg" alt="Compromissos para hoje">
+          </ion-card-header>  
+          <ion-card-content>
             Hoje
-          </ion-card-header>
-        
-          <ion-card-content>
-            {{eventoProvider.countEventosHoje()}}
           </ion-card-content>
-        
         </ion-card>
 
       </ion-col>
       <ion-col col-4>
-        <ion-card>
-
+        <ion-card class="eventos-home --amanha">
           <ion-card-header>
+            <span>{{eventoProvider.countEventosAmanha()}}</span>
+            <img src="../../assets/icon/calendar.svg" alt="Compromissos para amanhã">
+          </ion-card-header>
+          <ion-card-content>
             Amanhã
-          </ion-card-header>
-        
-          <ion-card-content>
-            {{eventoProvider.countEventosAmanha()}}
           </ion-card-content>
         
         </ion-card>
 
       </ion-col>
       <ion-col col-4>
-        <ion-card>
-
+        <ion-card class="eventos-home --todos">
           <ion-card-header>
-            Próximos
-          </ion-card-header>
-        
-          <ion-card-content>
             {{eventoProvider.countEventosMaiorIgualHoje()}}
+          </ion-card-header>
+          <ion-card-content>
+            Próximos
           </ion-card-content>
         
         </ion-card>
@@ -68,20 +61,24 @@
     </ion-row>
     <ion-row>
       <ion-col col-12>
-        <ion-card>
+        <ion-card class="financeiro-card">
 
           <ion-card-header>
-            Finanças
+            <img src="../../assets/icon/coin.svg" class="financeiro-card__icon" alt="Financeiro">
+            <span>Financeiro</span>
           </ion-card-header>
         
           <ion-card-content>
-            <p class="financeiro">R$ 207,23</p>
+            <p class="financeiro-card__texto">R$ 207,23</p>
           </ion-card-content>
         
         </ion-card>
 
       </ion-col>
     </ion-row>
-
+    <ion-row>
+      <button ion-button block class="default-color btn-atendimento">Iniciar atendimento</button>
+      <p class="link-cancelar-atendimento">Cancelar atendimento</p>
+    </ion-row>
   </ion-grid>
 </ion-content>

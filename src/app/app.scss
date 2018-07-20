@@ -12,20 +12,131 @@ body{
 .buttons{
     width: 100%;
 }
+.content-inside{
+    background: url(../assets/imgs/background.jpg) repeat 0 0;
+    background-size: cover;
+}
 .content-md hr{
     background-color: #d2cac4;
     border: none;
     width: 100%;
     margin-bottom: 30px;
 }
+.bar-button{
+    color: #fff;
+}
+.btn-atendimento{
+    font-weight: 700;
+    color: #6c4a37;
+    border-radius: 10px;
+}
+.button-inner{
+    font-size: 1.2rem;
+}
 .button-md{
-    background: #f0d264 !important;
+    background: #f0d264 !important;   
+}
+.content-inside .card{
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;
 }
 .default-text-color{
     color: #f0d264 !important;
 }
+.eventos-home{
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    color: #6c4a37;
+    background-blend-mode: screen;
+
+    &.--amanha{
+        background-color: #d6c9be;
+    }
+    &.--todos{
+        background-color: #b5a393;
+    }
+}
+.eventos-home .card-header{
+    font-size: 3rem;
+    padding: 0;
+    font-weight: 700;
+    color: #6c4a37;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    img{
+        width: 20px;
+    }
+}
+.eventos-home .card-content{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 30px;
+    font-weight: 700;
+}
+.header:after{
+    background-image: none;
+}
+.financeiro-card .card-content{
+    padding-bottom: 10px;
+}
+.financeiro-card .financeiro-card__icon{
+    width: 20px;
+    float: left;
+    margin-right: 10px;
+}
+.financeiro-card .financeiro-card__texto{
+    color: #6c4a37;
+    font-size: 1.8rem;
+    text-align: right;
+}
+.financeiro-card span{
+    font-weight: 700;
+    color: #6c4a37;
+}
+.imagem-perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.imagem-perfil__icon{
+    position: absolute;
+    top: 91px;
+    right: 85px;
+    border-radius: 50%;
+    width: auto;
+}
+.imagem-perfil__icon .button-md{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.imagem-perfil__image{
+    width: 150px;
+    height: 150px;
+}
+.imagem-perfil__title{
+    font-weight: 700;
+    margin-top: 15px;
+}
 .input{
     margin-bottom: 20px
+}
+.link-cancelar-atendimento{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    color: #ec7939;
 }
 .login-box{
     display: flex;
@@ -48,4 +159,15 @@ body{
 .login-box__text{
     color: #a49288;
     margin-bottom: 0;
+}
+.toolbar{
+    text-align: center;
+}
+.toolbar-title{
+    color: #fff;
+}
+.toolbar-background{
+    border-color: transparent;
+    background: transparent;
+    box-shadow: 0 0 0 transparent;
 }
