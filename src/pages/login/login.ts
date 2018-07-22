@@ -24,14 +24,11 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    
+
   }
   public goToCadastro() {
-    this.viewCtrl.dismiss();
-    this.navCtrl.push(CadastroPage, {
-
+    this.appCtrl.getRootNav().push(CadastroPage, {
     });
-      console.log("goToCadastro");
   }
 
   public logar() {
