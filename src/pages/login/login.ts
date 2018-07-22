@@ -138,6 +138,20 @@ export class LoginPage {
       })
   }
 
+  tryGoogleLogin() {
+    this.authService.doGoogleLogin()
+      .then(res => {
+        console.log(res);
+        this.showCadastro(res.additionalUserInfo.profile.first_name);
+      }, err => {
+        if (err && err.code === 'auth/account-exists-with-different-credential') {
+          this.showLogin(err.email);
+        } else {
+          this.showFalhaLogin();
+        }
+        console.log(err);
+      })
+  }
 
 }
 
