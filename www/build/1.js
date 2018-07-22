@@ -1,1 +1,42 @@
-webpackJsonp([1],{996:function(a,_,e){"use strict";Object.defineProperty(_,"__esModule",{value:!0}),e.d(_,"LoginPageModuleNgFactory",function(){return y});var c=e(0),n=e(284),i=e(501),r=e(502),t=e(503),o=e(504),u=e(505),b=e(506),d=e(507),f=e(508),s=e(509),k=e(512),l=e(16),g=e(37),j=e(93),p=e(279),v=e(91),w=e(196),y=c.W(n.a,[],function(a){return c._7([c._8(512,c.i,c.S,[[8,[i.a,r.a,t.a,o.a,u.a,b.a,d.a,f.a,s.a,k.a]],[3,c.i],c.s]),c._8(4608,l.l,l.k,[c.r,[2,l.w]]),c._8(4608,g.k,g.k,[]),c._8(4608,g.c,g.c,[]),c._8(4608,j.c,j.c,[j.f]),c._8(512,l.b,l.b,[]),c._8(512,g.j,g.j,[]),c._8(512,g.d,g.d,[]),c._8(512,g.i,g.i,[]),c._8(512,p.a,p.a,[]),c._8(512,p.b,p.b,[]),c._8(512,n.a,n.a,[]),c._8(256,v.a,w.a,[])])})}});
+webpackJsonp([1],{
+
+/***/ 1045:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroPageModule", function() { return CadastroPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro__ = __webpack_require__(242);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var CadastroPageModule = /** @class */ (function () {
+    function CadastroPageModule() {
+    }
+    CadastroPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__cadastro__["a" /* CadastroPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro__["a" /* CadastroPage */]),
+            ],
+        })
+    ], CadastroPageModule);
+    return CadastroPageModule;
+}());
+
+//# sourceMappingURL=cadastro.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=1.js.map

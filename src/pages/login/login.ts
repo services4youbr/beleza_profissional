@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController, App, ViewControll
 import { LoginProvider } from '../../providers/login/login';
 import { HomePage } from '../home/home';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { CadastroPage } from '../cadastro/cadastro';
+import { DadosPessoaisPage } from '../dados-pessoais/dados-pessoais';
 
 
 @IonicPage()
@@ -22,13 +24,14 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+    
+  }
+  public goToCadastro() {
+    this.viewCtrl.dismiss();
+    this.navCtrl.push(CadastroPage, {
 
-    // this.loginProvider.usuarioLogado().then(l => {
-    //   if (l) {
-    //     this.navCtrl.push(HomePage, {
-    //     });
-    //   }
-    // });
+    });
+      console.log("goToCadastro");
   }
 
   public logar() {
