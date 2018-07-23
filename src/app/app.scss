@@ -101,6 +101,37 @@ body{
     font-weight: 700;
     color: #6c4a37;
 }
+.form-cadastro{
+    h1{
+        color: #fff;
+    }
+    .item{
+        background-color: transparent;
+        color: #fff;
+    
+        .item-cover:focus{
+            background-color: transparent;
+        }
+        .radio-icon{
+            border-color: #fff;
+        }
+    }
+    .item.item-radio-checked{
+        .label{
+            color: #f0d264;
+        } 
+        .radio-icon{
+            border-color: #f0d264;
+        }
+        .radio-inner{
+            background-color: #f0d264;
+        }
+    }
+    p{
+        color: #fff;
+    }
+} 
+
 .imagem-perfil{
     display: flex;
     flex-direction: column;
