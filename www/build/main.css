@@ -34854,6 +34854,39 @@ body {
   color: #6c4a37;
 }
 
+.form-cadastro h1 {
+  color: #fff;
+}
+
+.form-cadastro .item {
+  background-color: transparent;
+  color: #fff;
+}
+
+.form-cadastro .item .item-cover:focus {
+  background-color: transparent;
+}
+
+.form-cadastro .item .radio-icon {
+  border-color: #fff;
+}
+
+.form-cadastro .item.item-radio-checked .label {
+  color: #f0d264;
+}
+
+.form-cadastro .item.item-radio-checked .radio-icon {
+  border-color: #f0d264;
+}
+
+.form-cadastro .item.item-radio-checked .radio-inner {
+  background-color: #f0d264;
+}
+
+.form-cadastro p {
+  color: #fff;
+}
+
 .imagem-perfil {
   display: -webkit-box;
   display: -webkit-flex;
