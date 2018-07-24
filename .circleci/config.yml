@@ -37,7 +37,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-    deploy-job:
+  deploy-job:
     machine:
       enabled: true
     steps:
