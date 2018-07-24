@@ -30,7 +30,7 @@ jobs:
       - run: npm install ionic
       - run: npm install
       - run: npm run ionic:build -- --prod
-      - run: scp -r /beleza_profissional/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br
+      - run: ls
 
       - save_cache:
           paths:
@@ -52,7 +52,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r /beleza_profissional/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br
+            scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br
 
 
 workflows:
@@ -60,7 +60,12 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-                  
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master            
 
 
 
