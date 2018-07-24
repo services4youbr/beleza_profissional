@@ -20,7 +20,6 @@ jobs:
             sftp $SSH_USER@$SSH_HOST |
             cd belezapro.services4you.com.br |
             scp -r /www/ $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br
-            
   build:
     docker:
       # specify the version you desire here
@@ -54,5 +53,18 @@ jobs:
         
       # run tests!
       #- run: yarn test
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master            
+
 
 
