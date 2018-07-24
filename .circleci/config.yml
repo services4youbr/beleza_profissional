@@ -15,7 +15,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: /home/s4y
+    working_directory: ~/s4y
 
     steps:
       - checkout
@@ -30,6 +30,7 @@ jobs:
       - run: npm install ionic
       - run: npm install
       - run: npm run ionic:build -- --prod
+      - run: ls
 
       - save_cache:
           paths:
@@ -51,7 +52,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST "scp /home/s4y/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
+            ssh $SSH_USER@$SSH_HOST "scp -r /home/circleci/s4y/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
 
 
 workflows:
