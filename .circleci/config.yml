@@ -52,8 +52,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: 
-            - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional
-; scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
+            - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional; scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
 
 
 workflows:
