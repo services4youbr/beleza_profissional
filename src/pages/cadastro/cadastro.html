@@ -8,19 +8,21 @@
 </ion-header>
 
 
-<ion-content class="content-inside form-cadastro" padding>
-  <h1>Cadastro</h1>
-  <p>Faça seu cadastro para poder acessar o Afrobella e começar a mudança na sua vida profissional.</p>
-  <hr>
-  <ion-list radio-group>
-    <p>Você deseja se cadastrar no MEI (Micro Empreendedor Individual)</p>
-    <ion-item>
-      <ion-label>Sim</ion-label>
-      <ion-radio value="Desejo ser MEI"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Não</ion-label>
-      <ion-radio value="Não desejo ser MEI"></ion-radio>
-    </ion-item>
-  </ion-list>
+<ion-content 
+  class="content-inside form-cadastro" 
+  [ngClass]="{
+    'etapa-1' : isEtapa1,
+    'etapa-2' : isEtapa2,
+    'etapa-3' : isEtapa3,
+    'etapa-4' : isEtapa4,
+    'etapa-5' : isEtapa5
+  }" 
+  padding>
+  <div class="form-cadastro__etapa1" [ngClass]="{'was-etapa1' : isEtapa2}">
+    <button ion-button block class="default-color" (click)="etapa2()">Próximo</button>
+  </div>
+  <div class="form-cadastro__etapa2" [ngClass]="{'is-etapa2' : isEtapa2}">
+    <button ion-button block class="default-color">Anterior</button>
+    <button ion-button block class="default-color">Próximo</button>
+  </div>
 </ion-content>
