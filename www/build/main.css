@@ -34854,6 +34854,89 @@ body {
   color: #6c4a37;
 }
 
+.form-cadastro.etapa-1 {
+  background: url(../assets/imgs/bg-cadastro-etp1.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+
+.form-cadastro.etapa-2 {
+  background: url(../assets/imgs/bg-cadastro-etp2.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+
+.form-cadastro.etapa-3 {
+  background: url(../assets/imgs/bg-cadastro-etp3.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+
+.form-cadastro.etapa-4 {
+  background: url(../assets/imgs/bg-cadastro-etp4.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+
+.form-cadastro.etapa-5 {
+  background: url(../assets/imgs/bg-cadastro-etp5.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+
+.form-cadastro .form-cadastro__etapa1 {
+  width: 90vw;
+  position: absolute;
+  top: 0;
+  left: 5vw;
+}
+
+.form-cadastro .form-cadastro__etapa2 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+.form-cadastro .was-etapa1 {
+  left: -100%;
+  -webkit-transition: left 2s;
+  transition: left 2s;
+}
+
+.form-cadastro .is-etapa2 {
+  left: 5vw;
+  -webkit-transition: left 2s;
+  transition: left 2s;
+}
+
+.form-cadastro h1 {
+  color: #fff;
+}
+
+.form-cadastro .item {
+  background-color: transparent;
+  color: #fff;
+}
+
+.form-cadastro .item .item-cover:focus {
+  background-color: transparent;
+}
+
+.form-cadastro .item .radio-icon {
+  border-color: #fff;
+}
+
+.form-cadastro .item.item-radio-checked .label {
+  color: #f0d264;
+}
+
+.form-cadastro .item.item-radio-checked .radio-icon {
+  border-color: #f0d264;
+}
+
+.form-cadastro .item.item-radio-checked .radio-inner {
+  background-color: #f0d264;
+}
+
+.form-cadastro p {
+  color: #fff;
+}
+
 .imagem-perfil {
   display: -webkit-box;
   display: -webkit-flex;
@@ -34930,12 +35013,26 @@ body {
   margin: 0 auto;
 }
 
-.login-box__facebook {
+.login-box .midias-sociais {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.login-box__midias {
   width: 42px;
-  height: 41px;
+  height: 42px;
   display: block;
-  margin-bottom: 20px;
-  margin-top: 20px;
+}
+
+.login-box__icon {
+  margin-left: 10px;
 }
 
 .login-box__inputs {

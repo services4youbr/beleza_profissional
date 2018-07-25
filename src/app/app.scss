@@ -102,6 +102,45 @@ body{
     color: #6c4a37;
 }
 .form-cadastro{
+    &.etapa-1{
+        background: url(../assets/imgs/bg-cadastro-etp1.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+    &.etapa-2{
+        background: url(../assets/imgs/bg-cadastro-etp2.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+    &.etapa-3{
+        background: url(../assets/imgs/bg-cadastro-etp3.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+    &.etapa-4{
+        background: url(../assets/imgs/bg-cadastro-etp4.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+    &.etapa-5{
+        background: url(../assets/imgs/bg-cadastro-etp5.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+    .form-cadastro__etapa1{
+        width: 90vw;
+        position: absolute;
+        top: 0;
+        left: 5vw;
+    }
+    .form-cadastro__etapa2{
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .was-etapa1{
+        left: -100%;
+        transition: left 2s;
+    }
+    .is-etapa2{
+        left: 5vw;
+        transition: left 2s;
+    }
     h1{
         color: #fff;
     }
@@ -177,12 +216,17 @@ body{
     width: 80%;
     margin: 0 auto;
 }
-.login-box__facebook{
+.login-box .midias-sociais{
+    display: flex;
+    flex-direction: row;
+}
+.login-box__midias{
     width: 42px;
-    height: 41px;
+    height: 42px;
     display: block;
-    margin-bottom: 20px;
-    margin-top: 20px;
+}
+.login-box__icon{
+    margin-left: 10px;
 }
 .login-box__inputs{
     width: 100%;
