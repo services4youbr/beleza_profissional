@@ -8,67 +8,67 @@ defaults: &defaults
     - image: circleci/node:7.10
 
 version: 2
-jobs:
-  <<: *defaults
-  build:
+  jobs:
+    <<: *defaults
+    build:
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-    steps:
-      - checkout
+        # documented at https://circleci.com/docs/2.0/circleci-images/
+        # - image: circleci/mongo:3.4.4
+      steps:
+        - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+        # Download and cache dependencies
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
-      - run: npm install ionic
-      - run: npm install
-      - run: npm run ionic:build -- --prod
-      - run: ls
-      - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
-	        # taken to be the root directory of the workspace.
-          root: www
+        - run: npm install ionic
+        - run: npm install
+        - run: npm run ionic:build -- --prod
+        - run: ls
+        - persist_to_workspace:
+            # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
+            # taken to be the root directory of the workspace.
+            root: www
+            
+        - save_cache:
+            paths:
+              - node_modules
+            key: v1-dependencies-{{ checksum "package.json" }}
           
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-  deploy-job:
-    machine:
-      enabled: true
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "29:8d:e1:c0:c4:e8:84:f8:be:70:f9:47:9b:cc:01:d2"
-  deploy:
-    machine:
-      enabled: true
-    steps:
-      - run:
-          name: Deploy Over SSH
-          command: 
-            - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional ; scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
+        # run tests!
+    deploy-job:
+      machine:
+        enabled: true
+      steps:
+        - add_ssh_keys:
+            fingerprints:
+              - "29:8d:e1:c0:c4:e8:84:f8:be:70:f9:47:9b:cc:01:d2"
+    deploy:
+      machine:
+        enabled: true
+      steps:
+        - run:
+            name: Deploy Over SSH
+            command: 
+              - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional ; scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
 
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master            
+  workflows:
+    version: 2
+    build-and-deploy:
+      jobs:
+        - build
+        - deploy:
+            requires:
+              - build
+            filters:
+              branches:
+                only: master            
 
 
 
