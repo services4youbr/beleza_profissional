@@ -1,12 +1,14 @@
 # The following stanza defines a map named defaults with a variable that may be inserted using the YAML merge (<<: *) key 
 # later in the file to save some typing. See http://yaml.org/type/merge.html for details.
 
+
+version: 2
 defaults: &defaults
   working_directory: /tmp
   docker:
     - image: circleci/node:7.10
 
-version: 2
+
 jobs:
   flow:
     <<: *defaults
