@@ -1,54 +1,76 @@
-# The following stanza defines a map named defaults with a variable that may be inserted using the YAML merge (<<: *) key 
-# later in the file to save some typing. See http://yaml.org/type/merge.html for details.
-
-
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
 version: 2
-
-
-
 jobs:
-  flow:
-    <<: *defaults
+
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/s4y
+
     steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
       - run: npm install ionic
       - run: npm install
       - run: npm run ionic:build -- --prod
-      
-      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job. 
-      - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
-	  # taken to be the root directory of the workspace.
-          root: www
-          
+      - run: ls
 
-          
+      - save_cache:
+          paths:
+            - www
+          key: v1-dependencies-{{ checksum "package.json" }}
+        
+      # run tests!
   deploy-job:
-      machine:
-        enabled: true
-      steps:
-        - add_ssh_keys:
-            fingerprints:
-              - "29:8d:e1:c0:c4:e8:84:f8:be:70:f9:47:9b:cc:01:d2"
-  downstream:
-    <<: *defaults
     machine:
-        enabled: true
+      enabled: true
     steps:
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: /tmp/www
-
-      - run: 
+      - add_ssh_keys:
+          fingerprints:
+            - "29:8d:e1:c0:c4:e8:84:f8:be:70:f9:47:9b:cc:01:d2"
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
           name: Deploy Over SSH
           command: 
-            - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional ; scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
+            - scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br
+
 
 workflows:
   version: 2
-
-  btd:
+  build-and-deploy:
     jobs:
-      - flow
-      - downstream:
+      - build
+      - deploy:
           requires:
-            - flow
+            - build
+          filters:
+            branches:
+              only: master            
+
+
+
