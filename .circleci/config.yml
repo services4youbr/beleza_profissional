@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: 
-            ssh $SSH_USER@$SSH_HOST "scp -r /home/circleci/s4y/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
+            ssh $SSH_USER@$SSH_HOST "scp -r /www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
 
 
 workflows:
