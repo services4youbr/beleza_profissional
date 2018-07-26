@@ -2,21 +2,20 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+defaults: &defaults
+  working_directory: /tmp
+  docker:
+    - image: circleci/node:7.10
+
 version: 2
 jobs:
-
+  <<: *defaults
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
-      
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/s4y
-
     steps:
       - checkout
 
@@ -34,10 +33,8 @@ jobs:
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
 	        # taken to be the root directory of the workspace.
-          root: workspace
-          # Must be relative path from root
-          paths:
-            - build
+          root: www
+          
       - save_cache:
           paths:
             - node_modules
