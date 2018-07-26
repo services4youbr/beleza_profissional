@@ -31,7 +31,14 @@ jobs:
       - run: npm install
       - run: npm run ionic:build -- --prod
       - run: ls
-
+      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job. 
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
+	        # taken to be the root directory of the workspace.
+          root: workspace
+          # Must be relative path from root
+          paths:
+            - build
       - save_cache:
           paths:
             - node_modules
@@ -49,10 +56,13 @@ jobs:
     machine:
       enabled: true
     steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /tmp/workspace
       - run:
           name: Deploy Over SSH
           command: 
-            - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional; scp -r * $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
+            - ssh -o "StrictHostKeyChecking no" ddh_vz96se@belezapro.services4you.com.br "cd ~/beleza_profissional; scp -r /tmp/workspace/build/www* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br"
 
 
 workflows:
