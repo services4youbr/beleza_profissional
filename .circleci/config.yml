@@ -3,10 +3,7 @@
 
 
 version: 2
-defaults: &defaults
-  working_directory: /tmp
-  docker:
-    - image: circleci/node:7.10
+
 
 
 jobs:
