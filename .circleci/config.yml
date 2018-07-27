@@ -16,10 +16,9 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/s4y
-
-    steps:
-      - attach_workspace:
+    attach_workspace:
           at: ~/s4y
+    steps:
       - checkout
 
       # Download and cache dependencies
