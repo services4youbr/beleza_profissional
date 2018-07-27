@@ -17,7 +17,7 @@ jobs:
 
     working_directory: ~/s4y
     attach_workspace:
-          at: ~/s4y
+      at: ~/s4y
     steps:
       - checkout
 
@@ -53,8 +53,6 @@ jobs:
     machine:
       enabled: true
     steps:
-      - attach_workspace:
-          at: ~/s4y
       - run: ls
       - run:
           name: Deploy Over SSH
