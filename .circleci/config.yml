@@ -33,9 +33,9 @@ jobs:
       - run: npm run ionic:build -- --prod
       - run: ls
       - persist_to_workspace:
-        root: ~/s4y
-        paths:
-          - www
+          root: ~/s4y
+          paths:
+            - www
       - save_cache:
           paths:
             - www
