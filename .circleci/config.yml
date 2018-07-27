@@ -50,11 +50,12 @@ jobs:
           fingerprints:
             - "29:8d:e1:c0:c4:e8:84:f8:be:70:f9:47:9b:cc:01:d2"
   deploy:
-    attach_workspace:
-      at: ~/s4y
+    
     machine:
       enabled: true
     steps:
+      attach_workspace:
+        at: ~/s4y
       - run: ls
       - run:
           name: Deploy Over SSH
