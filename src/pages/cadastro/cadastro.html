@@ -15,14 +15,30 @@
     'etapa-2' : isEtapa2,
     'etapa-3' : isEtapa3,
     'etapa-4' : isEtapa4,
-    'etapa-5' : isEtapa5
+    'etapa-5' : isEtapa5,
+    'etapa-5__volta' : backEtapa4,
+    'etapa-4__volta' : backEtapa3,
+    'etapa-3__volta' : backEtapa2,
+    'etapa-2__volta' : backEtapa1
   }" 
   padding>
-  <div class="form-cadastro__etapa1" [ngClass]="{'was-etapa1' : isEtapa2}">
-    <button ion-button block class="default-color" (click)="etapa2()">Próximo</button>
+  <div class="form-cadastro__etapa1" [ngClass]="{'is-etapa1' : isEtapa1, 'was-etapa1' : isEtapa2,'back-form2' : backEtapa1}">
+    <button ion-button block class="default-color" (click)="goToEtapa2()">Próximo</button>
   </div>
-  <div class="form-cadastro__etapa2" [ngClass]="{'is-etapa2' : isEtapa2}">
-    <button ion-button block class="default-color">Anterior</button>
-    <button ion-button block class="default-color">Próximo</button>
+  <div class="form-cadastro__etapa2" [ngClass]="{'is-etapa2' : isEtapa2, 'was-etapa2' : isEtapa3,'back-form3' : backEtapa2}">
+    <button ion-button block class="default-color" (click)="backToEtapa1()">Anterior</button>
+    <button ion-button block class="default-color"(click)="goToEtapa3()">Próximo</button>
+  </div>
+  <div class="form-cadastro__etapa3" [ngClass]="{'is-etapa3' : isEtapa3, 'was-etapa3' : isEtapa4,'back-form4' : backEtapa3}">
+    <button ion-button block class="default-color" (click)="backToEtapa2()">Anterior</button>
+    <button ion-button block class="default-color" (click)="goToEtapa4()">Próximo</button>
+  </div>
+  <div class="form-cadastro__etapa4" [ngClass]="{'is-etapa4' : isEtapa4, 'was-etapa4' : isEtapa5,'back-form5' : backEtapa4}">
+    <button ion-button block class="default-color" (click)="backToEtapa3()">Anterior</button>
+    <button ion-button block class="default-color" (click)="goToEtapa5()">Próximo</button>
+  </div>
+  <div class="form-cadastro__etapa5" [ngClass]="{'is-etapa5' : isEtapa5}">
+    <button ion-button block class="default-color" (click)="backToEtapa4()">Anterior</button>
+    <button ion-button block class="default-color">Me cadastre</button>
   </div>
 </ion-content>

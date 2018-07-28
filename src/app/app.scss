@@ -1,3 +1,36 @@
+@keyframes animatedBgGoToEtapa2 {
+	from { background-position: 0 0; }
+	to { background-position: -250px 0; }
+}
+@keyframes animatedBgGoToEtapa3 {
+	from { background-position: -250px 0; }
+	to { background-position: -460px 0; }
+}
+@keyframes animatedBgGoToEtapa4 {
+	from { background-position: -460px 0; }
+	to { background-position: -630px 0; }
+}
+@keyframes animatedBgGoToEtapa5 {
+	from { background-position: -630px 0; }
+	to { background-position: -800px 0; }
+}
+@keyframes animatedBgBackToEtapa4 {
+    from {background-position: -800px 0}
+    to {background-position: -630px 0}
+}
+@keyframes animatedBgBackToEtapa3 {
+    from {background-position: -630px 0}
+    to {background-position: -460px 0}
+}
+@keyframes animatedBgBackToEtapa2 {
+    from {background-position: -460px 0}
+    to {background-position: -250px 0}
+}
+@keyframes animatedBgBackToEtapa1 {
+    from {background-position: -250px 0}
+    to {background-position: 0 0}
+}
+
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -102,45 +135,82 @@ body{
     color: #6c4a37;
 }
 .form-cadastro{
+    background: url(../assets/imgs/bg-cadastro.jpg) no-repeat 0 0;
+    background-size: cover;
     &.etapa-1{
-        background: url(../assets/imgs/bg-cadastro-etp1.jpg) no-repeat 0 0;
-        background-size: cover;
+        background-position: 0 0;
     }
     &.etapa-2{
-        background: url(../assets/imgs/bg-cadastro-etp2.jpg) no-repeat 0 0;
-        background-size: cover;
+        animation: animatedBgGoToEtapa2 2s linear;
+        background-position: -250px 0;
     }
     &.etapa-3{
-        background: url(../assets/imgs/bg-cadastro-etp3.jpg) no-repeat 0 0;
-        background-size: cover;
+        animation: animatedBgGoToEtapa3 2s linear;
+        background-position: -460px 0;
     }
     &.etapa-4{
-        background: url(../assets/imgs/bg-cadastro-etp4.jpg) no-repeat 0 0;
-        background-size: cover;
+        animation: animatedBgGoToEtapa4 2s linear;
+        background-position: -630px 0;
     }
     &.etapa-5{
-        background: url(../assets/imgs/bg-cadastro-etp5.jpg) no-repeat 0 0;
-        background-size: cover;
+        animation: animatedBgGoToEtapa5 2s linear;
+        background-position: -800px 0;
+    }
+    &.etapa-5__volta{
+        animation: animatedBgBackToEtapa4 2s linear;
+        background-position: -630px 0;
+    }
+    &.etapa-4__volta{
+        animation: animatedBgBackToEtapa3 2s linear;
+        background-position: -460px 0;
+    }
+    &.etapa-3__volta{
+        animation: animatedBgBackToEtapa2 2s linear;
+        background-position: -250px 0;
+    }
+    &.etapa-2__volta{
+        animation: animatedBgBackToEtapa1 2s linear;
+        background-position: 0 0;
     }
     .form-cadastro__etapa1{
         width: 90vw;
         position: absolute;
         top: 0;
-        left: 5vw;
+        left: 100%;
     }
     .form-cadastro__etapa2{
         position: absolute;
         top: 0;
         left: 100%;
     }
-    .was-etapa1{
-        left: -100%;
-        transition: left 2s;
+    .form-cadastro__etapa3{
+        position: absolute;
+        top: 0;
+        left: 100%;
     }
-    .is-etapa2{
+    .form-cadastro__etapa4{
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .form-cadastro__etapa5{
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .is-etapa1, .is-etapa2, .is-etapa3, .is-etapa4, .is-etapa5{
         left: 5vw;
         transition: left 2s;
     }
+    .was-etapa1, .was-etapa2, .was-etapa3, .was-etapa4, .was-etapa5{
+        left: -100%;
+        transition: left 2s;
+    }
+    .back-form5, .back-form4, .back-form3, .back-form2, .back-form1{
+        left: 5vw;
+        transition: right 2s;
+    }
+
     h1{
         color: #fff;
     }
