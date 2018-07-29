@@ -26,19 +26,17 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: mkdir -p build
-      - run: cd build
       - run: npm install ionic
       - run: npm install
       - run: npm run ionic:build -- --prod
       - run: ls
       - persist_to_workspace:
-          root: build
+          root: ~/s4y
           paths:
             - www
       - save_cache:
           paths:
-            - ~/s4y/build/www
+            - ~/s4y/www
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
@@ -55,12 +53,12 @@ jobs:
       enabled: true
     steps:
       - attach_workspace:
-          at: ~/s4y/build
+          at: ~/s4y/
       - run: ls
       - run:
           name: Deploy Over SSH
           command: 
-            ssh $SSH_USER@$SSH_HOST "scp -r ~/s4y/build/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
+            ssh $SSH_USER@$SSH_HOST "scp -r ~/s4y/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
 
 
 workflows:
