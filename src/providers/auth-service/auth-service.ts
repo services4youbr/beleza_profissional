@@ -101,4 +101,10 @@ export class AuthServiceProvider {
     return this.afAuth.auth.createUserAndRetrieveDataWithEmailAndPassword(email, senha);
   }
 
+  public getId(): Observable<string> {
+    return this.afAuth.user.map(u => {
+      return u.uid
+    });
+  }
+
 }

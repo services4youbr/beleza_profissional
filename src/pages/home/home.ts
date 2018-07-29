@@ -19,6 +19,7 @@ export class HomePage implements OnInit {
   public usuario: any;
   public nomeUsuario: string;
   public photoUrl: string;
+  public id: string;
 
   constructor(public navCtrl: NavController, public loginProvider: LoginProvider, public eventoProvider: EventoProvider,
     public appCtrl: App, public navParams: NavParams, public authService: AuthServiceProvider) {
@@ -31,6 +32,7 @@ export class HomePage implements OnInit {
         this.usuario = u
         this.authService.getNome().then(p => p.subscribe(nome => this.nomeUsuario = nome));
         this.authService.getPhotoURL().then(p => p.subscribe(url => this.photoUrl = url));
+        this.authService.getId().subscribe(id => this.id = id);
 
         console.log(this.usuario);
       } else {
