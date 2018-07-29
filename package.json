@@ -12,7 +12,7 @@
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
-    "@angular/animations": "5.2.11",
+    "@angular/animations": "^6.1.0",
     "@angular/common": "5.2.11",
     "@angular/compiler": "5.2.11",
     "@angular/compiler-cli": "5.2.11",
@@ -41,12 +41,11 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.1.10",
+    "@ionic/app-scripts": "^3.1.11",
     "typescript": "~2.6.2"
   },
   "description": "Afro bela",
   "config": {
     "ionic_source_map": "source-map"
   }
-  
 }

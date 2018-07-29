@@ -13,6 +13,10 @@ export class CadastroPage implements OnInit {
   isEtapa3 : boolean;
   isEtapa4 : boolean;
   isEtapa5 : boolean;
+  backEtapa1 : boolean;
+  backEtapa2 : boolean;
+  backEtapa3 : boolean;
+  backEtapa4 : boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -23,15 +27,50 @@ export class CadastroPage implements OnInit {
     this.isEtapa3 = false;
     this.isEtapa4 = false;
     this.isEtapa5 = false;
+    this.backEtapa1 = false;
+    this.backEtapa2= false;
+    this.backEtapa3 = false;
+    this.backEtapa4 = false;
     
   }
-  etapa1(){
+  goToEtapa1(){
     this.isEtapa1 = true;
     this.isEtapa2 = false;
   }
-  etapa2(){
-    this.isEtapa1 = false;
+  goToEtapa2(){
+    this.backEtapa1 = false;
     this.isEtapa2 = true;
+  }
+  goToEtapa3(){
+    this.backEtapa2 = false;
+    this.isEtapa3 = true;
+  }
+  goToEtapa4(){
+    this.backEtapa3 = false;
+    this.isEtapa4 = true;
+  }
+  goToEtapa5(){
+    this.backEtapa4 = false;
+    this.isEtapa5 = true;
+  }
+  backToEtapa1(){
+    this.backEtapa2 = false;
+    this.isEtapa2 = false;
+    this.backEtapa1 = true;
+  }
+  backToEtapa2(){
+    this.backEtapa3 = false;
+    this.isEtapa3 = false;
+    this.backEtapa2 = true;
+  }
+  backToEtapa3(){
+    this.backEtapa4 = false;
+    this.isEtapa4 = false;
+    this.backEtapa3 = true;
+  }
+  backToEtapa4(){
+    this.isEtapa5 = false;
+    this.backEtapa4 = true;
   }
 
 }
