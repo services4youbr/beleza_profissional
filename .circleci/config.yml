@@ -54,7 +54,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/s4y/
-      - run: ls
+      - run: ls 
       - run:
           name: Deploy Over SSH
           command: |
