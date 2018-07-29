@@ -38,20 +38,19 @@ export class CadastroPage implements OnInit {
     this.isEtapa2 = false;
   }
   goToEtapa2(){
-    this.isEtapa1 = false;
     this.backEtapa1 = false;
     this.isEtapa2 = true;
   }
   goToEtapa3(){
-    this.isEtapa2 = false;
+    this.backEtapa2 = false;
     this.isEtapa3 = true;
   }
   goToEtapa4(){
-    this.isEtapa3 = false;
+    this.backEtapa3 = false;
     this.isEtapa4 = true;
   }
   goToEtapa5(){
-    this.isEtapa4 = false;
+    this.backEtapa4 = false;
     this.isEtapa5 = true;
   }
   backToEtapa1(){
@@ -61,10 +60,12 @@ export class CadastroPage implements OnInit {
   }
   backToEtapa2(){
     this.backEtapa3 = false;
+    this.isEtapa3 = false;
     this.backEtapa2 = true;
   }
   backToEtapa3(){
     this.backEtapa4 = false;
+    this.isEtapa4 = false;
     this.backEtapa3 = true;
   }
   backToEtapa4(){

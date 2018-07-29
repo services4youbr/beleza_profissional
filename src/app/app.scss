@@ -208,7 +208,11 @@ body{
     }
     .back-form5, .back-form4, .back-form3, .back-form2, .back-form1{
         left: 5vw;
-        transition: right 2s;
+        transition: left 2s;
+    }
+    .go-etapa1, .go-etapa2, .go-etapa3, .go-etapa4, .go-etapa5{
+        left: 100%;
+        transition: left 2s;
     }
 
     h1{
