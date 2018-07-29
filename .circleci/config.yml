@@ -57,8 +57,8 @@ jobs:
       - run: ls
       - run:
           name: Deploy Over SSH
-          command: 
-            ssh $SSH_USER@$SSH_HOST "scp -r ~/s4y/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
+          command: |
+            scp -r ~/s4y/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br
 
 
 workflows:
