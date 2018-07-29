@@ -22,8 +22,8 @@ export class AuthServiceProvider {
   }
 
   doFacebookLogin() {
-    return new Promise<any>((resolve, reject) => {
-      
+    return this.storage.set('tipo-login', 'facebook').then(d => new Promise<any>((resolve, reject) => {
+
       this.afAuth.auth
         .signInWithPopup(this.faceBookProvider)
         .then(res => {
@@ -32,15 +32,42 @@ export class AuthServiceProvider {
           console.log(err);
           reject(err);
         })
-    })
-  } 
+    }));
+
+  }
+
+  public getNome(): Promise<Observable<string | ''>> {
+    return this.storage.get('tipo-login').then(tipo => {
+      if (tipo === 'facebook') {
+        return this.afAuth.authState.map(u => u.displayName);
+      } else if (tipo === 'google') {
+        return this.afAuth.authState.map(u => u.displayName);
+      }
+      return Observable.of('');
+    });
+  }
+
+  public getPhotoURL(): Promise<Observable<string | ''>> {
+    return this.storage.get('tipo-login').then(tipo => {
+      if (tipo === 'facebook') {
+        return this.afAuth.authState.map(u => u.photoURL + '/picture?height=500')
+      } else if (tipo === 'google') {
+        return this.afAuth.authState.map(u => {
+          return u.photoURL;
+        })
+      }
+
+      return Observable.of('assets/imgs/black-woman.jpg');
+    });
+
+  }
 
   public getUser(): Observable<firebase.User | null> {
     return this.afAuth.authState;
   }
 
   doGoogleLogin() {
-    return new Promise<any>((resolve, reject) => {
+    return this.storage.set('tipo-login', 'google').then(d => new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('profile');
       provider.addScope('email');
@@ -49,7 +76,7 @@ export class AuthServiceProvider {
         .then(res => {
           resolve(res);
         })
-    })
+    }));
   }
 
   doRegister(value) {
@@ -68,6 +95,10 @@ export class AuthServiceProvider {
           resolve(res);
         }, err => reject(err))
     })
+  }
+
+  public cadastrar(email: string, senha: string) {
+    return this.afAuth.auth.createUserAndRetrieveDataWithEmailAndPassword(email, senha);
   }
 
 }

@@ -58,8 +58,7 @@ export class LoginPage {
     });
     alert.present();
     alert.onDidDismiss((data, role) => {
-      this.navCtrl.push(HomePage, {
-      });
+      this.navCtrl.push(HomePage);
     });
   }
 
@@ -71,8 +70,7 @@ export class LoginPage {
     });
     alert.present();
     alert.onDidDismiss((data, role) => {
-      this.navCtrl.push(HomePage, {
-      });
+      this.navCtrl.push(HomePage);
 
     });
   }
@@ -142,7 +140,7 @@ export class LoginPage {
     this.authService.doGoogleLogin()
       .then(res => {
         console.log(res);
-        this.showCadastro(res.additionalUserInfo.profile.first_name);
+        this.showCadastro(res.additionalUserInfo.profile.given_name); 
       }, err => {
         if (err && err.code === 'auth/account-exists-with-different-credential') {
           this.showLogin(err.email);

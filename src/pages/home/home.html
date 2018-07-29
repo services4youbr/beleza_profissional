@@ -15,7 +15,7 @@
         <ion-icon name="camera"></ion-icon>
       </button>
     </p>
-    <div class="imagem-perfil__title">{{usuario ? usuario.displayName : ''}}</div>
+    <div class="imagem-perfil__title">{{nomeUsuario}}</div>
     <div class="imagem-perfil__subtitle">Maquiadora</div>
   </div>
 
@@ -26,7 +26,7 @@
           <ion-card-header>
             <span>{{eventoProvider.countEventosHoje()}}</span>
             <img src="../../assets/icon/schedule-button.svg" alt="Compromissos para hoje">
-          </ion-card-header>  
+          </ion-card-header>
           <ion-card-content>
             Hoje
           </ion-card-content>
@@ -42,7 +42,7 @@
           <ion-card-content>
             Amanhã
           </ion-card-content>
-        
+
         </ion-card>
 
       </ion-col>
@@ -54,7 +54,7 @@
           <ion-card-content>
             Próximos
           </ion-card-content>
-        
+
         </ion-card>
 
       </ion-col>
@@ -67,11 +67,11 @@
             <img src="../../assets/icon/coin.svg" class="financeiro-card__icon" alt="Financeiro">
             <span>Financeiro</span>
           </ion-card-header>
-        
+
           <ion-card-content>
             <p class="financeiro-card__texto">R$ 207,23</p>
           </ion-card-content>
-        
+
         </ion-card>
 
       </ion-col>

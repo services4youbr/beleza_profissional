@@ -17,6 +17,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 export class HomePage implements OnInit {
 
   public usuario: any;
+  public nomeUsuario: string;
   public photoUrl: string;
 
   constructor(public navCtrl: NavController, public loginProvider: LoginProvider, public eventoProvider: EventoProvider,
@@ -28,7 +29,8 @@ export class HomePage implements OnInit {
     this.authService.getUser().subscribe(u => {
       if (u) {
         this.usuario = u
-        this.photoUrl =  this.usuario.photoURL + '/picture?height=500';
+        this.authService.getNome().then(p => p.subscribe(nome => this.nomeUsuario = nome));
+        this.authService.getPhotoURL().then(p => p.subscribe(url => this.photoUrl = url));
 
         console.log(this.usuario);
       } else {
