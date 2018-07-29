@@ -15,9 +15,8 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/s4y
-    attach_workspace:
-      at: ~/s4y
+    working_directory: /s4y
+    
     steps:
       - checkout
 
@@ -27,18 +26,19 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
+      - run: mkdir -p build
+      - run: cd build
       - run: npm install ionic
       - run: npm install
       - run: npm run ionic:build -- --prod
       - run: ls
       - persist_to_workspace:
-          root: ~/build
-          paths:
-            - /www
-      - save_cache:
+          root: build
           paths:
             - www
+      - save_cache:
+          paths:
+            - build/www
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
@@ -54,13 +54,13 @@ jobs:
     machine:
       enabled: true
     steps:
-      attach_workspace:
-        at: ~/s4y/build
+      - attach_workspace:
+          at: /s4y/build
       - run: ls
       - run:
           name: Deploy Over SSH
           command: 
-            ssh $SSH_USER@$SSH_HOST "scp -r www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
+            ssh $SSH_USER@$SSH_HOST "scp -r /s4y/build/www/* $SSH_USER@$SSH_HOST:/belezapro.services4you.com.br" 
 
 
 workflows:
