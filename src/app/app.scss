@@ -12,10 +12,10 @@
 }
 @keyframes animatedBgGoToEtapa5 {
 	from { background-position: -630px 0; }
-	to { background-position: -800px 0; }
+	to { background-position: -750px 0; }
 }
 @keyframes animatedBgBackToEtapa4 {
-    from {background-position: -800px 0}
+    from {background-position: -750px 0}
     to {background-position: -630px 0}
 }
 @keyframes animatedBgBackToEtapa3 {
@@ -34,6 +34,21 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+a{
+    color: #6c4a37;
+
+    &:hover{
+        color: #f0d264;
+    }
+}
+.bg-opacity{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    opacity: 0.9;
+}
 .bn-page{
     display: flex;
     flex-direction: column;
@@ -44,16 +59,6 @@ body{
 }
 .buttons{
     width: 100%;
-}
-.content-inside{
-    background: url(../assets/imgs/background.jpg) repeat 0 0;
-    background-size: cover;
-}
-.content-md hr{
-    background-color: #d2cac4;
-    border: none;
-    width: 100%;
-    margin-bottom: 30px;
 }
 .bar-button{
     color: #fff;
@@ -69,6 +74,29 @@ body{
 .button-md{
     background: #f0d264 !important;   
 }
+.card{
+    background: transparent;
+}
+.card-header{
+    text-align: center;
+    white-space: normal;
+    p{
+        font-size: 1.7rem;
+    }
+}
+.card-ios{
+    background: transparent
+}
+.content-inside{
+    background: url(../assets/imgs/background.jpg) repeat 0 0;
+    background-size: cover;
+}
+.content-md hr{
+    background-color: #d2cac4;
+    border: none;
+    width: 100%;
+    margin-bottom: 30px;
+}
 .content-inside .card{
     width: 100%;
     margin: 0;
@@ -76,6 +104,12 @@ body{
 }
 .default-text-color{
     color: #f0d264 !important;
+}
+.second-text-color{
+    color: #6c4a37 !important;
+}
+.default-color{
+    background: #f0d264 !important;
 }
 .eventos-home{
     width: 90px;
@@ -154,7 +188,7 @@ body{
     }
     &.etapa-5{
         animation: animatedBgGoToEtapa5 2s linear;
-        background-position: -800px 0;
+        background-position: -750px 0;
     }
     &.etapa-5__volta{
         animation: animatedBgBackToEtapa4 2s linear;
@@ -172,31 +206,60 @@ body{
         animation: animatedBgBackToEtapa1 2s linear;
         background-position: 0 0;
     }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        .buttons__button{
+            width: 50%;
+            height: 30px;
+        }
+    }
+    .card{
+        .card-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
     .form-cadastro__etapa1{
-        width: 90vw;
+        width: 90%;
         position: absolute;
-        top: 0;
+        top: 30%;
         left: 100%;
+        max-width: 90%;
     }
     .form-cadastro__etapa2{
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .form-cadastro__etapa3{
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .form-cadastro__etapa4{
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .form-cadastro__etapa5{
         position: absolute;
         top: 0;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .is-etapa1, .is-etapa2, .is-etapa3, .is-etapa4, .is-etapa5{
         left: 5vw;
@@ -309,6 +372,28 @@ body{
     color: #a49288;
     margin-bottom: 0;
 }
+.nota-rodape{
+    font-size: 1rem !important;
+    margin-top: 10px !important;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.options__item{
+    width: 75px;
+    height: 75px;
+    background: #ccc;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .toolbar{
     text-align: center;
 }
@@ -320,3 +405,4 @@ body{
     background: transparent;
     box-shadow: 0 0 0 transparent;
 }
+

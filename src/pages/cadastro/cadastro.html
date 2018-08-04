@@ -22,13 +22,30 @@
     'etapa-2__volta' : backEtapa1
   }" 
   padding>
+  
   <div class="form-cadastro__etapa1" 
     [ngClass]="{
       'is-etapa1' : isEtapa1, 
       'was-etapa1' : isEtapa2,
       'back-form2' : backEtapa1
     }">
-    <button ion-button block class="default-color" (click)="goToEtapa2()">Próximo</button>
+    <div class="bg-opacity"></div>
+    <ion-card>
+
+      <ion-card-header>
+        <p class="second-text-color">Deseja ser optante do <b>MEI</b>?</p>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div class="buttons">
+          <button ion-button class="default-color buttons__button" (click)="goToEtapa2()">Sim</button>
+          <button ion-button class="default-color buttons__button" (click)="goToEtapa3()">Não</button>
+        </div>
+        <p class="nota-rodape"><a href="#" (click)="showAlertMEI()">O que é MEI?</a></p>
+      </ion-card-content>
+    
+    </ion-card>
+    
   </div>
   <div class="form-cadastro__etapa2" 
     [ngClass]="{
@@ -37,8 +54,24 @@
       'back-form3' : backEtapa2,
       'go-etapa1' : backEtapa1
     }">
-    <button ion-button block class="default-color" (click)="backToEtapa1()">Anterior</button>
-    <button ion-button block class="default-color"(click)="goToEtapa3()">Próximo</button>
+    <div class="bg-opacity"></div>
+    <ion-card>
+
+      <ion-card-header>
+        <p class="second-text-color"> Declarou o IR nos dois últimos anos?</p>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-input type="text" [(ngModel)]="reciboIR" name="numeroIR" placeholder="Número do último recibo"></ion-input>
+        <div class="buttons">
+          <button ion-button class="default-color buttons__button" (click)="backToEtapa1()">Voltar</button>
+          <button ion-button class="default-color buttons__button"(click)="goToEtapa3()">Prosseguir</button>
+        </div>
+        <p class="nota-rodape"><a href="#">Caso não tenha esse número em mãos, ele será solicitado posteriormente.</a></p>
+      </ion-card-content>
+    
+    </ion-card>
+    
   </div>
   <div class="form-cadastro__etapa3" 
     [ngClass]="{
@@ -47,8 +80,27 @@
       'back-form4' : backEtapa3,
       'go-etapa2' : backEtapa2
     }">
-    <button ion-button block class="default-color" (click)="backToEtapa2()">Anterior</button>
-    <button ion-button block class="default-color" (click)="goToEtapa4()">Próximo</button>
+    <div class="bg-opacity"></div>
+    <ion-card>
+
+      <ion-card-header>
+        <p class="second-text-color">Escolha sua atividade principal</p>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div class="options">
+          <div class="options__item">Manicure / Pedicure</div>
+          <div class="options__item">Cabelereira</div>
+          <div class="options__item">Maquiadora</div>
+        </div>
+        <div class="buttons">
+          <button ion-button class="default-color buttons__button" (click)="backToEtapa2()">Voltar</button>
+          <button ion-button class="default-color buttons__button"(click)="goToEtapa4()">Prosseguir</button>
+        </div>
+        
+      </ion-card-content>
+    
+    </ion-card>
   </div>
   <div class="form-cadastro__etapa4" 
     [ngClass]="{
@@ -57,15 +109,94 @@
       'back-form5' : backEtapa4,
       'go-etapa3' : backEtapa3
     }">
-    <button ion-button block class="default-color" (click)="backToEtapa3()">Anterior</button>
-    <button ion-button block class="default-color" (click)="goToEtapa5()">Próximo</button>
+    <div class="bg-opacity"></div>
+    <ion-card>
+
+      <ion-card-header>
+        <p class="second-text-color">Escolha sua atividade secundária</p>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div class="options">
+          <div class="options__item">Manicure / Pedicure</div>
+          <div class="options__item">Cabelereira</div>
+          <div class="options__item">Maquiadora</div>
+        </div>
+        <div class="buttons">
+          <button ion-button class="default-color buttons__button" (click)="backToEtapa3()">Voltar</button>
+          <button ion-button class="default-color buttons__button" (click)="goToEtapa5()">Prosseguir</button>
+        </div>
+        
+      </ion-card-content>
+    
+    </ion-card>
+    
   </div>
   <div class="form-cadastro__etapa5" 
     [ngClass]="{
       'is-etapa5' : isEtapa5,
       'go-etapa4' :backEtapa4 
     }">
-    <button ion-button block class="default-color" (click)="backToEtapa4()">Anterior</button>
-    <button ion-button block class="default-color">Me cadastre</button>
+    <div class="bg-opacity"></div>
+    <ion-card>
+
+      <ion-card-header>
+        <p class="second-text-color"> Cadastre seus <b>dados pessoais</b></p>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+              <ion-input type="text" [(ngModel)]="nome" name="nome" placeholder="Nome"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-input type="text" [(ngModel)]="cpf" name="cpf" placeholder="CPF"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+              <ion-input type="text" [(ngModel)]="nascimento" name="nascimento" placeholder="Nascimento"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-input type="email" [(ngModel)]="email" name="email" placeholder="E-mail"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-input type="tel" [(ngModel)]="telefone" name="telefone" placeholder="Telefone"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+              <ion-input type="tel" [(ngModel)]="celular" name="celular" placeholder="Celular"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-input type="number" [(ngModel)]="cep" name="cep" name="cep" placeholder="CEP"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-input type="text" [(ngModel)]="logradouro" name="logradouro" placeholder="Endereço"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-input type="number" [(ngModel)]="numero" name="numero" placeholder="Número"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+              <ion-input type="text" [(ngModel)]="complemento" name="complemento" placeholder="Complemento"></ion-input>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+        <div class="buttons">
+          <button ion-button class="default-color buttons__button" (click)="backToEtapa4()">Voltar</button>
+          <button ion-button class="default-color buttons__button">Cadastrar</button>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
