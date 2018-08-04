@@ -22,13 +22,30 @@
     'etapa-2__volta' : backEtapa1
   }" 
   padding>
+  
   <div class="form-cadastro__etapa1" 
     [ngClass]="{
       'is-etapa1' : isEtapa1, 
       'was-etapa1' : isEtapa2,
       'back-form2' : backEtapa1
     }">
-    <button ion-button block class="default-color" (click)="goToEtapa2()">Próximo</button>
+    <div class="bg-opacity"></div>
+    <ion-card>
+
+      <ion-card-header>
+        <p class="second-text-color">Deseja ser optante do <b>MEI</b>?</p>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div class="buttons">
+          <button ion-button class="default-color buttons__button" (click)="goToEtapa2()">Sim</button>
+          <button ion-button class="default-color buttons__button" (click)="goToEtapa3()">Não</button>
+        </div>
+        <p class="nota-rodape"><a href="#">O que é MEI?</a></p>
+      </ion-card-content>
+    
+    </ion-card>
+    
   </div>
   <div class="form-cadastro__etapa2" 
     [ngClass]="{
