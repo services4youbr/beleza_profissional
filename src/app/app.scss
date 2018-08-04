@@ -12,10 +12,10 @@
 }
 @keyframes animatedBgGoToEtapa5 {
 	from { background-position: -630px 0; }
-	to { background-position: -800px 0; }
+	to { background-position: -750px 0; }
 }
 @keyframes animatedBgBackToEtapa4 {
-    from {background-position: -800px 0}
+    from {background-position: -750px 0}
     to {background-position: -630px 0}
 }
 @keyframes animatedBgBackToEtapa3 {
@@ -79,6 +79,7 @@ a{
 }
 .card-header{
     text-align: center;
+    white-space: normal;
     p{
         font-size: 1.7rem;
     }
@@ -187,7 +188,7 @@ a{
     }
     &.etapa-5{
         animation: animatedBgGoToEtapa5 2s linear;
-        background-position: -800px 0;
+        background-position: -750px 0;
     }
     &.etapa-5__volta{
         animation: animatedBgBackToEtapa4 2s linear;
@@ -226,30 +227,39 @@ a{
 
     }
     .form-cadastro__etapa1{
-        width: 90vw;
+        width: 90%;
         position: absolute;
         top: 30%;
         left: 100%;
+        max-width: 90%;
     }
     .form-cadastro__etapa2{
         position: absolute;
-        top: 30%;
+        top: 25%;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .form-cadastro__etapa3{
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .form-cadastro__etapa4{
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .form-cadastro__etapa5{
         position: absolute;
         top: 0;
         left: 100%;
+        max-width: 90%;
+        width: 90%;
     }
     .is-etapa1, .is-etapa2, .is-etapa3, .is-etapa4, .is-etapa5{
         left: 5vw;
@@ -366,6 +376,24 @@ a{
     font-size: 1rem !important;
     margin-top: 10px !important;
 }
+.options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.options__item{
+    width: 75px;
+    height: 75px;
+    background: #ccc;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .toolbar{
     text-align: center;
 }
@@ -377,3 +405,4 @@ a{
     background: transparent;
     box-shadow: 0 0 0 transparent;
 }
+

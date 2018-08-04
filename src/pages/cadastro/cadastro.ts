@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,   AlertController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -18,7 +18,7 @@ export class CadastroPage implements OnInit {
   backEtapa3 : boolean;
   backEtapa4 : boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController) {
   }
 
   ngOnInit(){
@@ -72,5 +72,12 @@ export class CadastroPage implements OnInit {
     this.isEtapa5 = false;
     this.backEtapa4 = true;
   }
-
+  showAlertMEI(){
+    const alertMEI = this.alertController.create({
+      title: 'O que é MEI?',
+      subTitle: 'Significa microempreendedor individual.<br> Para ser um MEI é necessário faturar hoje até R$ 81.000,00 por ano, não ter participação em outra empresa como sócio ou titular e ter no máximo um empregado contratado que receba o salário-mínimo ou o piso da categoria.',
+      buttons: ['Ok']
+    });
+    alertMEI.present();
+  }
 }
