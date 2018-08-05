@@ -148,46 +148,112 @@
         <ion-grid>
           <ion-row>
             <ion-col col-12>
-              <ion-input type="text" [(ngModel)]="nome" name="nome" placeholder="Nome"></ion-input>
+              <ion-item>
+                <ion-label floating>Nome</ion-label>
+                <ion-input type="text" [(ngModel)]="nome" name="nome"></ion-input>
+              </ion-item>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col col-6>
-              <ion-input type="text" [(ngModel)]="cpf" name="cpf" placeholder="CPF"></ion-input>
+              <ion-item>
+                <ion-label floating>CPF</ion-label>
+                <ion-input type="text" [(ngModel)]="cpf" name="cpf"></ion-input>
+              </ion-item>
             </ion-col>
             <ion-col col-6>
-              <ion-input type="text" [(ngModel)]="nascimento" name="nascimento" placeholder="Nascimento"></ion-input>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-12>
-              <ion-input type="email" [(ngModel)]="email" name="email" placeholder="E-mail"></ion-input>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-6>
-              <ion-input type="tel" [(ngModel)]="telefone" name="telefone" placeholder="Telefone"></ion-input>
-            </ion-col>
-            <ion-col col-6>
-              <ion-input type="tel" [(ngModel)]="celular" name="celular" placeholder="Celular"></ion-input>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-6>
-              <ion-input type="number" [(ngModel)]="cep" name="cep" name="cep" placeholder="CEP"></ion-input>
+              <ion-item>
+                <ion-label floating>Data de nascimento</ion-label>
+                <ion-input type="text" [(ngModel)]="nascimento" name="nascimento"></ion-input>
+              </ion-item>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col col-12>
-              <ion-input type="text" [(ngModel)]="logradouro" name="logradouro" placeholder="Endereço"></ion-input>
+              <ion-item>
+                <ion-label floating>E-mail</ion-label>
+                <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+              </ion-item>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col col-6>
-              <ion-input type="number" [(ngModel)]="numero" name="numero" placeholder="Número"></ion-input>
+              <ion-item>
+                <ion-label floating>Telefone</ion-label>
+                <ion-input type="tel" [(ngModel)]="telefone" name="telefone"></ion-input>
+              </ion-item>
             </ion-col>
             <ion-col col-6>
-              <ion-input type="text" [(ngModel)]="complemento" name="complemento" placeholder="Complemento"></ion-input>
+              <ion-item>
+                <ion-label floating>Celular</ion-label>
+                <ion-input type="tel" [(ngModel)]="celular" name="celular"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>CEP</ion-label>
+                <ion-input type="number" [(ngModel)]="cep" name="cep" name="cep"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label floating>Logradouro</ion-label>
+                <ion-input type="text" [(ngModel)]="logradouro" name="logradouro"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>Número</ion-label>
+                <ion-input type="number" [(ngModel)]="numero" name="numero"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>Complemento</ion-label>
+                <ion-input type="text" [(ngModel)]="complemento" name="complemento"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>Bairro</ion-label>
+                <ion-input type="text" [(ngModel)]="bairro" name="bairro"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>Estado</ion-label>
+                <ion-input type="text" [(ngModel)]="estado" name="estado"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label floating>Cidade</ion-label>
+                <ion-input type="text" [(ngModel)]="cidade" name="cidade"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>Senha</ion-label>
+                <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating>Confirme a senha</ion-label>
+                <ion-input type="password" [(ngModel)]="confirmeSenha" name="confirmeSenha"></ion-input>
+              </ion-item>
             </ion-col>
           </ion-row>
 
