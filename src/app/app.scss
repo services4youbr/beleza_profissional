@@ -260,6 +260,22 @@ a{
         left: 100%;
         max-width: 90%;
         width: 90%;
+
+        .row{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .item{
+            color: #6c4a37;
+            padding-left: 0;
+
+            .item-inner{
+                padding-right: 0;
+            }
+            .input{
+                margin-bottom: 0;
+            }
+        }
     }
     .is-etapa1, .is-etapa2, .is-etapa3, .is-etapa4, .is-etapa5{
         left: 5vw;
