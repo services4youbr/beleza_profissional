@@ -256,10 +256,15 @@ a{
     }
     .form-cadastro__etapa5{
         position: absolute;
-        top: 0;
+        top:5%;
         left: 100%;
         max-width: 90%;
         width: 90%;
+
+        .card{
+            height: 80vh;
+            overflow: auto;
+        }
 
         .row{
             margin-left: 0;
@@ -422,3 +427,15 @@ a{
     box-shadow: 0 0 0 transparent;
 }
 
+/*Ajuste do label floating*/
+.item-md.item-input.item-input-has-focus .item-inner, 
+.item-md.item-input.input-has-focus .item-inner{
+    box-shadow: 0 0 transparent;
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    box-shadow: 0 0 transparent;
+}
+.item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
+    color: #6c4a37;
+}
