@@ -223,6 +223,18 @@ a{
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            p{
+                color: #6c4a37;
+            }
+            ul{
+                li{
+                    color: #6c4a37;
+                    padding-left: 20px;
+                    font-size: 1rem;
+                    margin-bottom: 5px;
+                }
+            }
         }
 
     }
@@ -256,10 +268,15 @@ a{
     }
     .form-cadastro__etapa5{
         position: absolute;
-        top: 0;
+        top:5%;
         left: 100%;
         max-width: 90%;
         width: 90%;
+
+        .card{
+            height: 80vh;
+            overflow: auto;
+        }
 
         .row{
             margin-left: 0;
@@ -292,6 +309,9 @@ a{
     .go-etapa1, .go-etapa2, .go-etapa3, .go-etapa4, .go-etapa5{
         left: 100%;
         transition: left 2s;
+    }
+    .is-alt-etapa2{
+        top: 10%;
     }
 
     h1{
@@ -403,7 +423,6 @@ a{
 .options__item{
     width: 75px;
     height: 75px;
-    background: #ccc;
     font-size: 10px;
     display: flex;
     flex-direction: row;
@@ -422,3 +441,15 @@ a{
     box-shadow: 0 0 0 transparent;
 }
 
+/*Ajuste do label floating*/
+.item-md.item-input.item-input-has-focus .item-inner, 
+.item-md.item-input.input-has-focus .item-inner{
+    box-shadow: 0 0 transparent;
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    box-shadow: 0 0 transparent;
+}
+.item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
+    color: #6c4a37;
+}

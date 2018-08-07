@@ -10,6 +10,7 @@ export class CadastroPage implements OnInit {
 
   isEtapa1 : boolean;
   isEtapa2 : boolean;
+  isAltEtapa2: boolean;
   isEtapa3 : boolean;
   isEtapa4 : boolean;
   isEtapa5 : boolean;
@@ -31,6 +32,7 @@ export class CadastroPage implements OnInit {
     this.backEtapa2= false;
     this.backEtapa3 = false;
     this.backEtapa4 = false;
+    this.isAltEtapa2 = false;
     
   }
   goToEtapa1(){
@@ -40,6 +42,12 @@ export class CadastroPage implements OnInit {
   goToEtapa2(){
     this.backEtapa1 = false;
     this.isEtapa2 = true;
+    this.isAltEtapa2 = false;
+  }
+  pulaEtapa2(){
+    this.backEtapa1 = false;
+    this.isEtapa2 = true;
+    this.isAltEtapa2 = true;
   }
   goToEtapa3(){
     this.backEtapa2 = false;
