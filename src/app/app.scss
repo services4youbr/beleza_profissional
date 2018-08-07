@@ -223,6 +223,18 @@ a{
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            p{
+                color: #6c4a37;
+            }
+            ul{
+                li{
+                    color: #6c4a37;
+                    padding-left: 20px;
+                    font-size: 1rem;
+                    margin-bottom: 5px;
+                }
+            }
         }
 
     }
@@ -297,6 +309,9 @@ a{
     .go-etapa1, .go-etapa2, .go-etapa3, .go-etapa4, .go-etapa5{
         left: 100%;
         transition: left 2s;
+    }
+    .is-alt-etapa2{
+        top: 10%;
     }
 
     h1{
@@ -408,7 +423,6 @@ a{
 .options__item{
     width: 75px;
     height: 75px;
-    background: #ccc;
     font-size: 10px;
     display: flex;
     flex-direction: row;

@@ -39,7 +39,7 @@
       <ion-card-content>
         <div class="buttons">
           <button ion-button class="default-color buttons__button" (click)="goToEtapa2()">Sim</button>
-          <button ion-button class="default-color buttons__button" (click)="goToEtapa3()">Não</button>
+          <button ion-button class="default-color buttons__button" (click)="pulaEtapa2()">Não</button>
         </div>
         <p class="nota-rodape"><a href="#" (click)="showAlertMEI()">O que é MEI?</a></p>
       </ion-card-content>
@@ -52,22 +52,39 @@
       'is-etapa2' : isEtapa2, 
       'was-etapa2' : isEtapa3,
       'back-form3' : backEtapa2,
-      'go-etapa1' : backEtapa1
+      'go-etapa1' : backEtapa1,
+      'is-alt-etapa2' : isAltEtapa2
     }">
     <div class="bg-opacity"></div>
     <ion-card>
 
       <ion-card-header>
-        <p class="second-text-color"> Declarou o IR nos dois últimos anos?</p>
+        <p *ngIf="isAltEtapa2 == false" class="second-text-color"> Declarou o IR nos dois últimos anos?</p>
+        <p *ngIf="isAltEtapa2" class="second-text-color"><b>Não quero ser MEI</b></p>
       </ion-card-header>
     
       <ion-card-content>
-        <ion-input type="text" [(ngModel)]="reciboIR" name="numeroIR" placeholder="Número do último recibo"></ion-input>
+        <ion-input *ngIf="isAltEtapa2 == false" type="text" [(ngModel)]="reciboIR" name="numeroIR" placeholder="Número do último recibo"></ion-input>
+        <div *ngIf="isAltEtapa2">
+          <p>Você optou por não ser MEI.</p>
+          <p>Você sabia que optando por ser MEI você tem os seguintes benefícios?</p>
+          <ul>
+            <li>Aposentadoria por idade:
+              <ul>
+                <li>Mulher aos 60 anos</li>
+                <li>Homem aos 65 anos</li>
+                <li>Carência mínima de 15 anos a contar do primeiro dia do pagamento do DAS</li>
+              </ul>
+            </li>
+            <li>Auxílio doença e aposentadoria por invalidez (1 ano de contribuição)</li>
+            <li>Salário-maternidade (10 meses de contribuição)</li>
+          </ul>
+        </div>
         <div class="buttons">
           <button ion-button class="default-color buttons__button" (click)="backToEtapa1()">Voltar</button>
           <button ion-button class="default-color buttons__button"(click)="goToEtapa3()">Prosseguir</button>
         </div>
-        <p class="nota-rodape"><a href="#">Caso não tenha esse número em mãos, ele será solicitado posteriormente.</a></p>
+        <p *ngIf="isAltEtapa2 == false" class="nota-rodape"><a href="#">Caso não tenha esse número em mãos, ele será solicitado posteriormente.</a></p>
       </ion-card-content>
     
     </ion-card>
@@ -89,9 +106,9 @@
     
       <ion-card-content>
         <div class="options">
-          <div class="options__item">Manicure / Pedicure</div>
-          <div class="options__item">Cabelereira</div>
-          <div class="options__item">Maquiadora</div>
+          <div class="options__item"><img src="assets/imgs/manicure.png" alt="Manicure/Pedicure"></div>
+          <div class="options__item"><img src="assets/imgs/cabelereira.png" alt="Cabelereira"></div>
+          <div class="options__item"><img src="assets/imgs/maquiadora.png" alt="Maquiadora"></div>
         </div>
         <div class="buttons">
           <button ion-button class="default-color buttons__button" (click)="backToEtapa2()">Voltar</button>
@@ -118,9 +135,9 @@
     
       <ion-card-content>
         <div class="options">
-          <div class="options__item">Manicure / Pedicure</div>
-          <div class="options__item">Cabelereira</div>
-          <div class="options__item">Maquiadora</div>
+          <div class="options__item"><img src="assets/imgs/manicure.png" alt="Manicure/Pedicure"></div>
+          <div class="options__item"><img src="assets/imgs/cabelereira.png" alt="Cabelereira"></div>
+          <div class="options__item"><img src="assets/imgs/maquiadora.png" alt="Maquiadora"></div>
         </div>
         <div class="buttons">
           <button ion-button class="default-color buttons__button" (click)="backToEtapa3()">Voltar</button>
