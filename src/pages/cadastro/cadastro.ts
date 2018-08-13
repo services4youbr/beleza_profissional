@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams,   AlertController } from 'ionic-angular';
+import { DadosPessoaisProvider } from '../../providers/dados-pessoais/dados-pessoais';
 
 @IonicPage()
 @Component({
@@ -18,8 +19,18 @@ export class CadastroPage implements OnInit {
   backEtapa2 : boolean;
   backEtapa3 : boolean;
   backEtapa4 : boolean;
+  maquiadora: boolean = false;
+  manicure: boolean = false;
+  cabelereira: boolean = false;
+  maquiadoraDisabled: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public alertController: AlertController,
+    public atividadeProvider: DadosPessoaisProvider
+  ) {
+    
   }
 
   ngOnInit(){
@@ -87,5 +98,25 @@ export class CadastroPage implements OnInit {
       buttons: ['Ok']
     });
     alertMEI.present();
+  }
+  atividadePrimaria(atividade){
+    
+    this.atividadeProvider.atividadePrimaria = atividade;
+    this.goToEtapa4();
+    
+  }
+  atividadeSecundaria(atividade){
+    if(this.atividadeProvider.atividadePrimaria == atividade){
+      const atividadeRepetida = this.alertController.create({
+        title: 'Atividade duplicada',
+        subTitle: 'Essa atividade já foi escolhida como principal e não pode ser escolhida novamente.',
+        buttons: ['Ok']
+      });
+      atividadeRepetida.present();
+    } else{
+      this.atividadeProvider.atividadeSecundaria = atividade;
+      this.goToEtapa5();
+    }
+    
   }
 }

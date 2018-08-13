@@ -10,8 +10,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DadosPessoaisProvider {
 
+  public atividadePrimaria: string;
+  public atividadeSecundaria: string;
+
   constructor(public http: HttpClient) {
-    console.log('Hello DadosPessoaisProvider Provider');
+    this.atividadePrimaria = '';
+    this.atividadeSecundaria = '';
   }
+
 
 }

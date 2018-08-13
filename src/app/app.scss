@@ -118,6 +118,10 @@ a{
     color: #6c4a37;
     background-blend-mode: screen;
 
+    &.--hoje{
+        background-color: #fff;
+    }
+
     &.--amanha{
         background-color: #d6c9be;
     }
@@ -147,6 +151,9 @@ a{
     align-items: flex-end;
     height: 30px;
     font-weight: 700;
+}
+.financeiro-card{
+    background-color: #fff;
 }
 .header:after{
     background-image: none;
@@ -428,6 +435,10 @@ a{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    &.disabled{
+        filter: grayscale(50);
+    }
 }
 .toolbar{
     text-align: center;

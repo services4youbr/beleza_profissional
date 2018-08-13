@@ -106,9 +106,9 @@
     
       <ion-card-content>
         <div class="options">
-          <div class="options__item"><img src="assets/imgs/manicure.png" alt="Manicure/Pedicure"></div>
-          <div class="options__item"><img src="assets/imgs/cabelereira.png" alt="Cabelereira"></div>
-          <div class="options__item"><img src="assets/imgs/maquiadora.png" alt="Maquiadora"></div>
+          <div class="options__item" (click)="atividadePrimaria('Manicure')" ><img src="assets/imgs/manicure.png" alt="Manicure/Pedicure"></div>
+          <div class="options__item" (click)="atividadePrimaria('Cabelereira')" ><img src="assets/imgs/cabelereira.png" alt="Cabelereira"></div>
+          <div class="options__item" (click)="atividadePrimaria('Maquiadora')"><img src="assets/imgs/maquiadora.png" alt="Maquiadora"></div>
         </div>
         <div class="buttons">
           <button ion-button class="default-color buttons__button" (click)="backToEtapa2()">Voltar</button>
@@ -135,9 +135,9 @@
     
       <ion-card-content>
         <div class="options">
-          <div class="options__item"><img src="assets/imgs/manicure.png" alt="Manicure/Pedicure"></div>
-          <div class="options__item"><img src="assets/imgs/cabelereira.png" alt="Cabelereira"></div>
-          <div class="options__item"><img src="assets/imgs/maquiadora.png" alt="Maquiadora"></div>
+          <div class="options__item" (click)="atividadeSecundaria('Manicure')" [ngClass]="{'disabled' : atividadeProvider.atividadePrimaria == 'Manicure'}"><img src="assets/imgs/manicure.png" alt="Manicure/Pedicure"></div>
+          <div class="options__item" (click)="atividadeSecundaria('Cabelereira')" [ngClass]="{'disabled' : atividadeProvider.atividadePrimaria == 'Cabelereira'}"><img src="assets/imgs/cabelereira.png" alt="Cabelereira"></div>
+          <div class="options__item" (click)="atividadeSecundaria('Maquiadora')" [ngClass]="{'disabled' : atividadeProvider.atividadePrimaria == 'Maquiadora'}"><img src="assets/imgs/maquiadora.png" alt="Maquiadora"></div>
         </div>
         <div class="buttons">
           <button ion-button class="default-color buttons__button" (click)="backToEtapa3()">Voltar</button>
