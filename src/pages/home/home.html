@@ -16,7 +16,10 @@
       </button>
     </p>
     <div class="imagem-perfil__title">{{nomeUsuario}}</div>
-    <div class="imagem-perfil__subtitle">Maquiadora</div>
+    <div class="imagem-perfil__subtitle">
+      <span class="default-text-color" (click)="goToCadastro()" *ngIf="dadosPessoais.atividadePrimaria == ''">Termine o seu cadastro</span>
+      <span *ngIf="dadosPessoais.atividadePrimaria != ''">{{dadosPessoais.atividadePrimaria}}</span>
+    </div>
     <div class="imagem-perfil__subtitle">{{id}}</div>
   </div>
 
