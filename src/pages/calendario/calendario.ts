@@ -34,9 +34,6 @@ export class CalendarioPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public eventoProvider: EventoProvider) {
-    if (this.navParams.get('data') === 'hoje') {
-      this.eventSource = this.eventoProvider.getEventosHoje();
-    }
   }
 
   ionViewDidLoad() {

@@ -1,15 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, App, NavParams } from 'ionic-angular';
 import { LoginProvider } from '../../providers/index';
-import { CalendarComponent } from "ionic2-calendar/calendar";
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import { Evento } from '../evento/evento.model';
-import { EventoPage } from '../evento/evento';
 import { EventoProvider } from '../../providers/evento/evento';
-import { CalendarioPage } from '../calendario/calendario';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { DadosPessoaisProvider } from '../../providers/dados-pessoais/dados-pessoais';
 import { CadastroPage } from '../cadastro/cadastro';
+import { CompromissosHojePage } from '../compromissos-hoje/compromissos-hoje';
+import { CompromissosAmanhaPage } from '../compromissos-amanha/compromissos-amanha';
+import { CompromissosProximosPage } from '../compromissos-proximos/compromissos-proximos';
 
 
 @Component({
@@ -51,10 +50,23 @@ export class HomePage implements OnInit {
   }
 
   public navegarHoje() {
-    this.navCtrl.push(CalendarioPage, {
+    this.navCtrl.push(CompromissosHojePage, {
       data: 'hoje'
     });
   }
+
+  public navegarAmanha() {
+    this.navCtrl.push(CompromissosAmanhaPage, {
+      data: 'amanha'
+    });
+  }
+  
+  public navegarProximo() {
+    this.navCtrl.push(CompromissosProximosPage, {
+      data: 'proximo'
+    });
+  }
+  
   public goToCadastro() {
     this.navCtrl.push(CadastroPage, {
     });

@@ -23,10 +23,14 @@ import { AirbrakeErrorHandler } from '../erroHandler/AirBrakeErrorHandler';
 import { CalendarioPageModule } from '../pages/calendario/calendario.module';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { environment } from '../environments/environment';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
+import { CompromissosHojePageModule } from '../pages/compromissos-hoje/compromissos-hoje.module';
+import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
+import { CompromissosAmanhaPageModule } from '../pages/compromissos-amanha/compromissos-amanha.module';
+import { CompromissosProximosPageModule } from '../pages/compromissos-proximos/compromissos-proximos.module';
 
 registerLocaleData(localePt);
 
@@ -46,8 +50,11 @@ registerLocaleData(localePt);
     NgCalendarModule,
     EventoPageModule,
     CalendarioPageModule,
-    CadastroPageModule,
+    CompromissosHojePageModule,
+    CompromissosAmanhaPageModule,
+    CompromissosProximosPageModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule // imports firebase/auth, only needed for auth features
   ],

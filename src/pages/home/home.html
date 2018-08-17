@@ -38,7 +38,7 @@
 
       </ion-col>
       <ion-col col-4>
-        <ion-card class="eventos-home --amanha">
+        <ion-card class="eventos-home --amanha" (click)="navegarAmanha()">
           <ion-card-header>
             <span>{{eventoProvider.countEventosAmanha()}}</span>
             <img src="../../assets/icon/calendar.svg" alt="Compromissos para amanhã">
@@ -51,7 +51,7 @@
 
       </ion-col>
       <ion-col col-4>
-        <ion-card class="eventos-home --todos">
+        <ion-card class="eventos-home --todos" (click)="navegarProximo()">
           <ion-card-header>
             {{eventoProvider.countEventosMaiorIgualHoje()}}
           </ion-card-header>

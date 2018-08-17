@@ -1,6 +1,8 @@
-export interface Evento {
+export interface Evento { 
+    key?:string,
     title: string,
-    startTime: Date,
-    endTime: Date,
-    allDay: boolean
+    startTime: string,
+    endTime: string,
+    allDay: boolean,
+    endereco?: string
 }

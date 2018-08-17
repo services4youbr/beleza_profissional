@@ -102,7 +102,7 @@ export class AuthServiceProvider {
   }
 
   public getId(): Observable<string> {
-    return this.afAuth.user.map(u => {
+    return this.afAuth.authState.map(u => {
       return u.uid
     });
   }
