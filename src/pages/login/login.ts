@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, App, ViewController } from 'ionic-angular';
-import { LoginProvider } from '../../providers/login/login';
-import { HomePage } from '../home/home';
+import { AlertController, App, IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { LoginProvider } from '../../providers/login/login';
 import { CadastroPage } from '../cadastro/cadastro';
-import { DadosPessoaisPage } from '../dados-pessoais/dados-pessoais';
+import { HomePage } from '../home/home';
 
 
 @IonicPage()
