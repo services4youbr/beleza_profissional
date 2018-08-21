@@ -51,28 +51,11 @@ export class LoginPage {
   }
 
   showLogin(login: string) {
-    const alert = this.alertCtrl.create({
-      title: 'Logado com sucesso!',
-      subTitle: `Bem vindo ${login}!`,
-      buttons: ['OK']
-    });
-    alert.present();
-    alert.onDidDismiss((data, role) => {
-      this.navCtrl.push(HomePage);
-    });
+    this.navCtrl.push(HomePage);
   }
 
   showCadastro(login: string) {
-    const alert = this.alertCtrl.create({
-      title: 'Cadastrado com sucesso!',
-      subTitle: `Bem vindo ${login}!`,
-      buttons: ['OK']
-    });
-    alert.present();
-    alert.onDidDismiss((data, role) => {
-      this.navCtrl.push(HomePage);
-
-    });
+    this.navCtrl.push(HomePage);
   }
 
   public cadastrar() {
