@@ -28,8 +28,8 @@
       <ion-col col-4>
         <ion-card class="eventos-home --hoje" (click)="navegarHoje()">
           <ion-card-header>
-            <span>{{eventoProvider.countEventosHoje()}}</span>
-            <img src="../../assets/icon/schedule-button.svg" alt="Compromissos para hoje">
+            <span>{{countEventoHoje == 0 ? '-' : countEventoHoje}}</span>
+            <img src="../../assets/icon/schedule-button.svg" alt="Compromissos para hoje"> 
           </ion-card-header>
           <ion-card-content>
             Hoje
@@ -40,7 +40,7 @@
       <ion-col col-4>
         <ion-card class="eventos-home --amanha" (click)="navegarAmanha()">
           <ion-card-header>
-            <span>{{eventoProvider.countEventosAmanha()}}</span>
+            <span>{{countEventoAmanha == 0 ? '-' : countEventoAmanha}}</span>
             <img src="../../assets/icon/calendar.svg" alt="Compromissos para amanhã">
           </ion-card-header>
           <ion-card-content>
@@ -53,7 +53,7 @@
       <ion-col col-4>
         <ion-card class="eventos-home --todos" (click)="navegarProximo()">
           <ion-card-header>
-            {{eventoProvider.countEventosMaiorIgualHoje()}}
+            {{countEventoProximos == 0 ? '-' : countEventoProximos}}
           </ion-card-header>
           <ion-card-content>
             Próximos
