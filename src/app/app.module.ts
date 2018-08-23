@@ -31,6 +31,7 @@ import { CompromissosHojePageModule } from '../pages/compromissos-hoje/compromis
 import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
 import { CompromissosAmanhaPageModule } from '../pages/compromissos-amanha/compromissos-amanha.module';
 import { CompromissosProximosPageModule } from '../pages/compromissos-proximos/compromissos-proximos.module';
+import { FinanceiroProvider } from '../providers/financeiro/financeiro';
 
 registerLocaleData(localePt);
 
@@ -74,7 +75,8 @@ registerLocaleData(localePt);
     DadosPessoaisProvider,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     EventoProvider,
-    AuthServiceProvider
+    AuthServiceProvider,
+    FinanceiroProvider
   ]
 })
 export class AppModule { }

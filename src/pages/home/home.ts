@@ -11,7 +11,8 @@ import { CompromissosAmanhaPage } from '../compromissos-amanha/compromissos-aman
 import { CompromissosHojePage } from '../compromissos-hoje/compromissos-hoje';
 import { CompromissosProximosPage } from '../compromissos-proximos/compromissos-proximos';
 import { Evento } from '../evento/evento.model';
-
+import * as firebase from 'firebase/app';
+import { FinanceiroProvider, EventoFinanceiro, TipoEventoFinaneiro } from '../../providers/financeiro/financeiro';
 
 @Component({
   selector: 'page-home',
@@ -27,6 +28,7 @@ export class HomePage {
   public countEventoAmanha = 0;
   public countEventoProximos = 0;
   public countHoje: Observable<number> = Observable.of(0);
+  public valor = 0.0;
 
   constructor(
     public navCtrl: NavController,
@@ -37,6 +39,7 @@ export class HomePage {
     public authService: AuthServiceProvider,
     public dadosPessoais: DadosPessoaisProvider,
     public db: AngularFireDatabase,
+    public financeiro: FinanceiroProvider
   ) {
 
   }
@@ -54,8 +57,29 @@ export class HomePage {
         });
 
         this.carregarHoje(u);
-        this.carregarAmanha( u);
+        this.carregarAmanha(u);
         this.carregarProximos(u);
+        this.db.list<EventoFinanceiro>('/eventos/financeiro/' + u.uid, ref => ref)
+          .valueChanges()
+          .flatMap(es => {
+            return es;
+          })
+          .map(e => {
+            if (e.tipo === TipoEventoFinaneiro.PAGAMENTO) {
+              return e.valor;
+            } else {
+              return e.valor * -1;
+            }
+          })
+          .reduce((acc, value, indice) => {
+            this.valor = acc + value;
+            console.log(this.valor);
+            return acc + value;
+          }, 0).subscribe(c => {
+            this.valor = c;
+          },
+            e => console.log(e),
+            () => console.log("terminei de contar"));
         console.log(this.usuario);
       } else {
         this.photoUrl = 'assets/imgs/black-woman.jpg';

@@ -9,9 +9,9 @@
 log.txt
 *.sublime-project
 *.sublime-workspace
-.vscode/
+#.vscode/
 npm-debug.log*
-package-lock.json
+#package-lock.json
 
 .idea/
 .sourcemaps/
