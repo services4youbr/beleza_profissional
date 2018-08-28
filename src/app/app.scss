@@ -74,6 +74,10 @@ a{
 .button-md{
     background: #f0d264 !important;   
 }
+.btn-aceitar{
+    height: 80px;
+    padding: 0 20px;
+}
 .card{
     background: transparent;
 }
@@ -88,8 +92,11 @@ a{
     background: transparent
 }
 .content-inside{
-    background: url(../assets/imgs/background.jpg) repeat 0 0;
-    background-size: cover;
+    background: url(../assets/imgs/backgrounds/tactile_noise.png) repeat 0 0;
+    
+}
+.content-inside .scroll-content{
+    margin-top: 76px !important;
 }
 .content-md hr{
     background-color: #d2cac4;
@@ -419,6 +426,19 @@ a{
     font-size: 1rem !important;
     margin-top: 10px !important;
 }
+.notificacao-atendimento{
+    background-color: #fff;
+    padding: 20px;
+    
+}
+.notificacao-atendimento .notificacao-atendimento__container{
+    display: flex;
+    align-items: center;
+}
+.notificacao-atendimento h3{
+    font-weight: 700;
+    text-align: center;
+}
 .options{
     display: flex;
     flex-direction: row;
@@ -441,7 +461,10 @@ a{
     }
 }
 .toolbar{
-    text-align: center;
+    text-align: right;
+}
+.toolbar-content img{
+    width: 25%;
 }
 .toolbar-title{
     color: #fff;

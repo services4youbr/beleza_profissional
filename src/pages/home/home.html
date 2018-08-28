@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>AFROBELLA</ion-title>
+    <img src="../../assets/imgs/logo/logo_afrobella.png">
   </ion-navbar>
 </ion-header>
 
@@ -20,10 +20,33 @@
       <span class="default-text-color" (click)="goToCadastro()" *ngIf="dadosPessoais.atividadePrimaria == ''">Termine o seu cadastro</span>
       <span *ngIf="dadosPessoais.atividadePrimaria != ''">{{dadosPessoais.atividadePrimaria}}</span>
     </div>
-    <div class="imagem-perfil__subtitle">{{id}}</div>
+    <!--<div class="imagem-perfil__subtitle">{{id}}</div>-->
   </div>
 
   <ion-grid>
+    <ion-row>
+      <ion-card class="notificacao-atendimento">
+        <h3>Novo serviço!</h3>
+        <div class="notificacao-atendimento__container">
+          <ion-col col-7>
+            <div class="notificacao-atendimento__info">
+              <p><b>Trança-afro</b></p>
+              <p>Graciela Sales</p>
+              <p>Riachuelo</p>
+              <p>27/08/2018</p>
+              <p>09:30</p>
+            </div>
+          </ion-col>
+          <ion-col col-5>
+            <button ion-button block class="default-color btn-aceitar">Aceitar<br> o<br> serviço</button>
+          </ion-col>
+        </div>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <button ion-button block class="default-color btn-atendimento">Iniciar atendimento</button>
+      <!--<p class="link-cancelar-atendimento">Cancelar atendimento</p>-->
+    </ion-row>
     <ion-row>
       <ion-col col-4>
         <ion-card class="eventos-home --hoje" (click)="navegarHoje()">
@@ -80,9 +103,6 @@
 
       </ion-col>
     </ion-row>
-    <ion-row>
-      <button ion-button block class="default-color btn-atendimento">Iniciar atendimento</button>
-      <p class="link-cancelar-atendimento">Cancelar atendimento</p>
-    </ion-row>
   </ion-grid>
+  
 </ion-content>
