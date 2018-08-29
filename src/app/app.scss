@@ -75,7 +75,7 @@ a{
     background: #f0d264 !important;   
 }
 .btn-aceitar{
-    height: 80px;
+    height: 100px;
     padding: 0 20px;
 }
 .card{
@@ -90,6 +90,9 @@ a{
 }
 .card-ios{
     background: transparent
+}
+.circle{
+    border-radius: 50% !important;
 }
 .content-inside{
     background: url(../assets/imgs/backgrounds/tactile_noise.png) repeat 0 0;
@@ -108,6 +111,13 @@ a{
     width: 100%;
     margin: 0;
     border-radius: 10px;
+}
+.content-perfil h2{
+    color: #fff;
+}
+.content-perfil .row{
+    margin-left: 0;
+    margin-right: 0;
 }
 .default-text-color{
     color: #f0d264 !important;
@@ -389,6 +399,20 @@ a{
 .input{
     margin-bottom: 20px
 }
+.item{
+    color: #fff;
+    min-height: 2rem;
+    background-color: transparent;
+}
+.item.item-block .item-inner{
+    border-bottom: none;
+}
+.item-input label{
+    color: #fff;
+}
+.item-input .input{
+    margin-bottom: 0;
+}
 .link-cancelar-atendimento{
     margin: 0;
     text-align: center;
@@ -485,5 +509,9 @@ a{
     box-shadow: 0 0 transparent;
 }
 .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
-    color: #6c4a37;
+    color: #fff;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid #fff;
+    box-shadow: 0 0 transparent;
 }

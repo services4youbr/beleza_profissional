@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { DadosPessoaisProvider } from '../../providers/dados-pessoais/dados-pessoais';
 
 /**
  * Generated class for the PerfilPage page.
@@ -24,7 +25,8 @@ export class PerfilPage {
   constructor(
     public navCtrl: NavController, 
     public authService: AuthServiceProvider,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public dadosPessoais: DadosPessoaisProvider
   ) {
   }
 
