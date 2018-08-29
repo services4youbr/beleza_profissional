@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { AlertController, App, IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginProvider } from '../../providers/login/login';
-import { CadastroPage } from '../cadastro/cadastro';
 import { HomePage } from '../home/home';
+import { CadastroPage } from '../cadastro/cadastro';
 
 
 @IonicPage()
@@ -26,8 +26,8 @@ export class LoginPage {
 
   }
   public goToCadastro() {
-    this.appCtrl.getRootNav().push(CadastroPage, {
-    });
+    this.appCtrl.getRootNavById('goToCadastro');
+    //this.navCtrl.push(CadastroPage, {});
   }
 
   public logar() {
