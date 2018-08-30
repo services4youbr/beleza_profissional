@@ -23,7 +23,17 @@
       <ion-col col-12>
         <ion-item class="item__form-ab">
           <ion-label floating>Atividade primária</ion-label>
-          <ion-input type="text" value="{{dadosPessoais.atividadePrimaria}}"></ion-input>
+          <ion-select [(ngModel)]="dadosPessoais.atividadePrimaria">
+            <ion-option 
+              value="Cabelereira" 
+              [attr.selected]="dadosPessoais.atividadePrimaria == 'Cabelereira' ? true : false">Cabelereira</ion-option>
+            <ion-option 
+              value="Manicure"
+              [attr.selected]="dadosPessoais.atividadePrimaria == 'Manicure' ? true : false">Manicure/Pedicure</ion-option>
+            <ion-option 
+            value="Maquiadora"
+            [attr.selected]="dadosPessoais.atividadePrimaria == 'Maquiadora' ? true : false">Maquiadora</ion-option>
+          </ion-select>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -45,7 +55,7 @@
     </ion-row>
     <ion-row>
       <ion-col col-12>
-        <ion-item class="item__form-ab">
+        <ion-item class="item__form-ab input-has-focus item-input-has-focus">
           <ion-label floating>Data de nascimento</ion-label>
           <!--<ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.month"></ion-datetime>-->
           <ion-input type="date" value=""></ion-input>
