@@ -1,3 +1,11 @@
+//Primary color
+$primary-color-600: #4a6572;
+$primary-color-700: #344955;
+$primary-color-800: #232f34;
+
+//Secondary color
+$secondary-color-500: #f9aa33;
+
 @keyframes animatedBgGoToEtapa2 {
 	from { background-position: 0 0; }
 	to { background-position: -250px 0; }
@@ -35,12 +43,29 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 a{
-    color: #6c4a37;
+    color: #000;
 
     &:hover{
-        color: #f0d264;
+        color: $secondary-color-500;
     }
 }
+.alert-md [aria-checked=true]{
+    .alert-radio-label{
+        color: #000;
+    }
+    .alert-radio-icon{
+        border-color: #000;
+    }
+    
+}
+.alert-md{
+    .alert-radio-inner{
+        background-color: #000; 
+    }
+    .alert-button{
+        color: #000;
+    }
+} 
 .bg-opacity{
     background: #fff;
     width: 100%;
@@ -65,14 +90,14 @@ a{
 }
 .btn-atendimento{
     font-weight: 700;
-    color: #6c4a37;
+    color: #000;
     border-radius: 10px;
 }
 .button-inner{
     font-size: 1.2rem;
 }
 .button-md{
-    background: #f0d264 !important;   
+    background: $primary-color-600 !important;   
 }
 .btn-aceitar{
     height: 100px;
@@ -95,14 +120,15 @@ a{
     border-radius: 50% !important;
 }
 .content-inside{
-    background: url(../assets/imgs/backgrounds/tactile_noise.png) repeat 0 0;
+    background-color: $secondary-color-500;
+    color: #000;
     
 }
 .content-inside .scroll-content{
     margin-top: 76px !important;
 }
 .content-md hr{
-    background-color: #d2cac4;
+    background-color: $primary-color-600;
     border: none;
     width: 100%;
     margin-bottom: 30px;
@@ -112,27 +138,27 @@ a{
     margin: 0;
     border-radius: 10px;
 }
-.content-perfil h2{
-    color: #fff;
+.content-perfil h2, .content-perfil p{
+    color: #000;
 }
 .content-perfil .row{
     margin-left: 0;
     margin-right: 0;
 }
 .default-text-color{
-    color: #f0d264 !important;
+    color: $secondary-color-500 !important;
 }
 .second-text-color{
-    color: #6c4a37 !important;
+    color: #000 !important;
 }
 .default-color{
-    background: #f0d264 !important;
+    background: $secondary-color-500 !important;
 }
 .eventos-home{
     width: 90px;
     height: 90px;
     padding: 10px;
-    color: #6c4a37;
+    color: #000;
     background-blend-mode: screen;
 
     &.--hoje{
@@ -140,17 +166,27 @@ a{
     }
 
     &.--amanha{
-        background-color: #d6c9be;
+        background-color: $primary-color-700;
+        color: #fff;
+
+        .card-header{
+            color: #fff;
+        }
     }
     &.--todos{
-        background-color: #b5a393;
+        background-color: $primary-color-800;
+        color: #fff;
+
+        .card-header{
+            color: #fff;
+        }
     }
 }
 .eventos-home .card-header{
     font-size: 3rem;
     padding: 0;
     font-weight: 700;
-    color: #6c4a37;
+    color: #000;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -184,13 +220,13 @@ a{
     margin-right: 10px;
 }
 .financeiro-card .financeiro-card__texto{
-    color: #6c4a37;
+    color: #000;
     font-size: 1.8rem;
     text-align: right;
 }
 .financeiro-card span{
     font-weight: 700;
-    color: #6c4a37;
+    color: #000;
 }
 .form-cadastro{
     background: url(../assets/imgs/bg-cadastro.jpg) no-repeat 0 0;
@@ -249,11 +285,11 @@ a{
             justify-content: center;
 
             p{
-                color: #6c4a37;
+                color: #000;
             }
             ul{
                 li{
-                    color: #6c4a37;
+                    color: #000;
                     padding-left: 20px;
                     font-size: 1rem;
                     margin-bottom: 5px;
@@ -307,11 +343,12 @@ a{
             margin-right: 0;
         }
         .item{
-            color: #6c4a37;
+            color: #000;
             padding-left: 0;
 
             .item-inner{
                 padding-right: 0;
+
             }
             .input{
                 margin-bottom: 0;
@@ -339,11 +376,11 @@ a{
     }
 
     h1{
-        color: #fff;
+        color: #000;
     }
     .item{
         background-color: transparent;
-        color: #fff;
+        color: #000;
     
         .item-cover:focus{
             background-color: transparent;
@@ -364,7 +401,7 @@ a{
         }
     }
     p{
-        color: #fff;
+        color: #000;
     }
 } 
 
@@ -373,7 +410,7 @@ a{
     flex-direction: column;
     align-items: center;
     position: relative;
-    color: #fff;
+    color: #000;
     margin-bottom: 50px;
 }
 .imagem-perfil__icon{
@@ -400,7 +437,7 @@ a{
     margin-bottom: 20px
 }
 .item{
-    color: #fff;
+    color: #000;
     min-height: 2rem;
     background-color: transparent;
 }
@@ -484,6 +521,15 @@ a{
         filter: grayscale(50);
     }
 }
+.select{
+    border-bottom: 1px solid #000;
+}
+.select-alert .alert-radio-button:focus, .select-alert .alert-radio-button:hover{
+    background-color: #f0d264;
+}
+.select-md .select-icon .select-icon-inner{
+    color: #000;
+}
 .toolbar{
     text-align: right;
 }
@@ -491,7 +537,7 @@ a{
     width: 25%;
 }
 .toolbar-title{
-    color: #fff;
+    color: #000;
 }
 .toolbar-background{
     border-color: transparent;
@@ -509,9 +555,15 @@ a{
     box-shadow: 0 0 transparent;
 }
 .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
-    color: #fff;
+    color: #000;
 }
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
     box-shadow: 0 0 transparent;
+}
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+    color: #000;
+}
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea{
+    border-bottom: 1px solid #000;
 }
