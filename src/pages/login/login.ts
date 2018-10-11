@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AlertController, App, IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { AlertController, App, IonicPage, NavController, NavParams, ViewController, Nav } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginProvider } from '../../providers/login/login';
 import { HomePage } from '../home/home';
@@ -15,6 +15,8 @@ export class LoginPage {
 
   public login: string;
   public senha: string;
+  @ViewChild(Nav) nav: Nav;
+
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
@@ -26,10 +28,10 @@ export class LoginPage {
 
   }
   public goToCadastro() {
-    this.appCtrl.getRootNavById('goToCadastro');
+    //this.appCtrl.getRootNavById('goToCadastro');
     //this.navCtrl.push(CadastroPage, {});
+    this.navCtrl.push(CadastroPage);
   }
-
   public logar() {
     this.loginProvider.logar(this.login, this.senha).then(l => {
       this.showLogin(this.loginProvider.login.login);

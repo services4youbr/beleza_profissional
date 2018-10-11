@@ -33,6 +33,10 @@ import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/datab
 import { CompromissosAmanhaPageModule } from '../pages/compromissos-amanha/compromissos-amanha.module';
 import { CompromissosProximosPageModule } from '../pages/compromissos-proximos/compromissos-proximos.module';
 import { FinanceiroProvider } from '../providers/financeiro/financeiro';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
+import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
+import { CadastroClientePageModule } from '../pages/cadastro-cliente/cadastro-cliente.module';
 
 registerLocaleData(localePt);
 
@@ -54,6 +58,8 @@ registerLocaleData(localePt);
     NgCalendarModule,
     EventoPageModule,
     CalendarioPageModule,
+    CadastroPageModule,
+    CadastroClientePageModule,
     CompromissosHojePageModule,
     CompromissosAmanhaPageModule,
     CompromissosProximosPageModule,
