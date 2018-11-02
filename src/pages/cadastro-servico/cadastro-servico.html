@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <img src="../../assets/imgs/logo/logo_afrobella.png">
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="content-inside content-servico" padding>
+  <h2>Cadastro de serviço</h2>
+  <ion-item class="item__form-ab">
+    <ion-label floating>Nome do serviço</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item class="item__form-ab">
+      <ion-label floating>Categoria</ion-label>
+      <ion-select [(ngModel)]="categoriaServico">
+        <ion-option value="cabelos">Cabelos</ion-option>
+        <ion-option value="maos-pes">Mãos e pés</ion-option>
+        <ion-option value="pele">Pele</ion-option>
+      </ion-select>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label floating>Detalhes</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Dias para atendimento</ion-label>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Domingo</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Segunda-feira</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Terça-feira</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Quarta-feira</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Quinta-feira</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Sexta-feira</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Sábado</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label>Feriados</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label floating>Tempo para o serviço (em horas)</ion-label>
+    <ion-select [(ngModel)]="tempoServico">
+      <ion-option value="meia-hora">00:30</ion-option>
+      <ion-option value="1h">01:00</ion-option>
+      <ion-option value="2h">02:00</ion-option>
+      <ion-option value="3h">03:00</ion-option>
+      <ion-option value="4h">04:00</ion-option>
+      <ion-option value="+4h">Mais de 04:00</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="item__form-ab">
+    <ion-label floating>Valor (em Real)</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+  <div class="buttons">
+    <button ion-button class="default-color buttons__button">Cadastrar</button>
+  </div>
+</ion-content>

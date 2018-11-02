@@ -45,8 +45,18 @@
     </ion-row>
     <ion-row>
       <button ion-button block class="default-color btn-atendimento">Iniciar atendimento</button>
-      <!--<p class="link-cancelar-atendimento">Cancelar atendimento</p>
+      <p class="link-cancelar-atendimento">Cancelar atendimento</p>
     </ion-row>-->
+    <ion-row>
+      <ion-col class="edit-area" col-4 (click)="goToCadastroServico()">
+        <p class="icon-service"><img src="../../assets/imgs/comb-and-scissors-for-hair.svg" alt="Cadastro de serviços"></p>
+        <p class="icon-service-text">Cadastro de serviços</p>
+      </ion-col>
+      <ion-col class="edit-area" col-4 (click)="goToCadastroRecebimento()">
+        <p class="icon-service"><img src="../../assets/imgs/real.svg" alt="Cadastro de recebimento"></p>
+        <p class="icon-service-text">Cadastro da conta</p>
+      </ion-col>
+    </ion-row>
     <ion-row>
       <ion-col col-4>
         <ion-card class="eventos-home --hoje" (click)="navegarHoje()">

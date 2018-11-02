@@ -14,6 +14,7 @@ import { Evento } from '../evento/evento.model';
 import * as firebase from 'firebase/app';
 import { FinanceiroProvider, EventoFinanceiro, TipoEventoFinaneiro } from '../../providers/financeiro/financeiro';
 import { PerfilPage } from '../perfil/perfil';
+import { CadastroServicoPage } from '../cadastro-servico/cadastro-servico';
 
 @Component({
   selector: 'page-home',
@@ -174,6 +175,11 @@ export class HomePage {
 
   public goToCadastro() {
     this.navCtrl.push(CadastroPage, {
+    });
+  }
+  public goToCadastroServico(){
+    this.navCtrl.push(CadastroServicoPage, {
+
     });
   }
 

@@ -34,9 +34,8 @@ import { CompromissosAmanhaPageModule } from '../pages/compromissos-amanha/compr
 import { CompromissosProximosPageModule } from '../pages/compromissos-proximos/compromissos-proximos.module';
 import { FinanceiroProvider } from '../providers/financeiro/financeiro';
 import { CadastroPage } from '../pages/cadastro/cadastro';
-import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
-import { CadastroClientePageModule } from '../pages/cadastro-cliente/cadastro-cliente.module';
+import { CadastroServicoPage } from '../pages/cadastro-servico/cadastro-servico';
 
 registerLocaleData(localePt);
 
@@ -45,7 +44,10 @@ registerLocaleData(localePt);
     MyApp,
     HomePage,
     ListPage,
-    PerfilPage
+    PerfilPage,
+    CadastroPage,
+    CadastroClientePage,
+    CadastroServicoPage
 
   ],
   imports: [
@@ -58,8 +60,6 @@ registerLocaleData(localePt);
     NgCalendarModule,
     EventoPageModule,
     CalendarioPageModule,
-    CadastroPageModule,
-    CadastroClientePageModule,
     CompromissosHojePageModule,
     CompromissosAmanhaPageModule,
     CompromissosProximosPageModule,
@@ -73,7 +73,10 @@ registerLocaleData(localePt);
     MyApp,
     HomePage,
     ListPage,
-    PerfilPage
+    PerfilPage,
+    CadastroPage,
+    CadastroClientePage,
+    CadastroServicoPage
   ],
   providers: [
     StatusBar,

@@ -123,8 +123,11 @@ a{
     border-radius: 50% !important;
 }
 .content-inside{
-    background-color: $primary-color;
+    background: url(../assets/imgs/bg-cadastro.jpg) no-repeat 0 0;
+    background-size: cover;
     color: $on-surface-color;
+    background-blend-mode: screen;
+    background-color: #999;
     
 }
 .content-inside .scroll-content{
@@ -152,13 +155,16 @@ a{
     margin-right: 0;
 }
 .default-text-color{
-    color: $on-primary-color !important;
+    color: $on-secondary-color !important;
 }
 .second-text-color{
     color: $on-secondary-color !important;
 }
 .default-color{
     background: $secondary-color !important;
+}
+.edit-area{
+    text-align: center;
 }
 .eventos-home{
     width: 90px;
@@ -304,6 +310,56 @@ a{
         }
 
     }
+    input:not([type]), 
+    input[type=text]:not(.browser-default), 
+    input[type=password]:not(.browser-default), 
+    input[type=email]:not(.browser-default), 
+    input[type=url]:not(.browser-default), 
+    input[type=time]:not(.browser-default), 
+    input[type=date]:not(.browser-default), 
+    input[type=datetime]:not(.browser-default), 
+    input[type=datetime-local]:not(.browser-default), 
+    input[type=tel]:not(.browser-default), 
+    input[type=number]:not(.browser-default), 
+    input[type=search]:not(.browser-default), 
+    textarea.materialize-textarea,
+    input:not([type]):focus:not([readonly]), 
+    input[type=text]:not(.browser-default):focus:not([readonly]), 
+    input[type=password]:not(.browser-default):focus:not([readonly]), 
+    input[type=email]:not(.browser-default):focus:not([readonly]), 
+    input[type=url]:not(.browser-default):focus:not([readonly]), 
+    input[type=time]:not(.browser-default):focus:not([readonly]), 
+    input[type=date]:not(.browser-default):focus:not([readonly]), 
+    input[type=datetime]:not(.browser-default):focus:not([readonly]), 
+    input[type=datetime-local]:not(.browser-default):focus:not([readonly]), 
+    input[type=tel]:not(.browser-default):focus:not([readonly]), 
+    input[type=number]:not(.browser-default):focus:not([readonly]), 
+    input[type=search]:not(.browser-default):focus:not([readonly]), 
+    textarea.materialize-textarea:focus:not([readonly]){
+        border-bottom: 1px solid $on-secondary-color;
+    }
+    .item-input .label, 
+    .item-select .label, 
+    .item-datetime .label,
+    .item-input-has-focus .label-md[stacked], 
+    .input-has-focus .label-md[stacked], 
+    .item-input-has-focus .label-md[floating], 
+    .input-has-focus .label-md[floating],
+    input:not([type]), 
+    input[type=text]:not(.browser-default), 
+    input[type=password]:not(.browser-default), 
+    input[type=email]:not(.browser-default), 
+    input[type=url]:not(.browser-default), 
+    input[type=time]:not(.browser-default), 
+    input[type=date]:not(.browser-default), 
+    input[type=datetime]:not(.browser-default), 
+    input[type=datetime-local]:not(.browser-default), 
+    input[type=tel]:not(.browser-default), 
+    input[type=number]:not(.browser-default), 
+    input[type=search]:not(.browser-default), 
+    textarea.materialize-textarea{
+        color: $on-secondary-color;
+    }
     .form-cadastro__etapa1{
         width: 90%;
         position: absolute;
@@ -409,15 +465,23 @@ a{
     p{
         color: $on-surface-color;
     }
-} 
-
+}
+.icon-service{
+    margin: 0;
+}
+.icon-service img{
+    width: 30px;
+}
+.icon-service-text{
+    margin: 0;
+}
 .imagem-perfil{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     color: $on-primary-color;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .imagem-perfil__icon{
     position: absolute;
@@ -438,10 +502,17 @@ a{
 .imagem-perfil__title{
     font-weight: 700;
     margin-top: 15px;
+    color: $on-secondary-color;
+}
+.imagem-perfil__subtitle{
+    color: $on-secondary-color;
 }
 .input{
     margin-bottom: 20px;
     color: $on-primary-color;
+}
+.checkbox button:focus{
+    background-color: transparent;
 }
 .item{
     color: $on-surface-color;
@@ -456,6 +527,7 @@ a{
 }
 .item-input .input{
     margin-bottom: 0;
+    color: #4F4F4F;
 }
 .link-cancelar-atendimento{
     margin: 0;
@@ -529,16 +601,20 @@ a{
     }
 }
 .select{
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $on-secondary-color;
+
+    button{
+        background-color: transparent;
+    }
 }
 .select-alert .alert-radio-button:focus, .select-alert .alert-radio-button:hover{
     background-color: $secondary-color;
 }
 .select-md .select-icon .select-icon-inner{
-    color: #fff;
+    color: $on-secondary-color;
 }
 .select-text{
-    color: $on-primary-color;
+    color: $on-secondary-color;
 }
 .toolbar{
     text-align: right;
@@ -565,15 +641,15 @@ a{
     box-shadow: 0 0 transparent;
 }
 .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
-    color: $on-primary-color;
+    color: $on-secondary-color;
 }
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $on-secondary-color;
     box-shadow: 0 0 transparent;
 }
 .item-input .label, .item-select .label, .item-datetime .label{
-    color: $on-primary-color;
+    color: $on-secondary-color;
 }
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea{
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $on-secondary-color;
 }
