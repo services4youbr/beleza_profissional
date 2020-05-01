@@ -9,7 +9,9 @@
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@angular/animations": "^6.1.0",
@@ -34,11 +36,12 @@
     "ionic-angular": "3.9.2",
     "ionic2-calendar": "^0.4.4",
     "ionicons": "3.0.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "materialize-css": "^0.100.2",
     "rxjs": "5.5.10",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.1.11",
@@ -47,5 +50,6 @@
   "description": "Afro bela",
   "config": {
     "ionic_source_map": "source-map"
-  }
+  },
+  "snyk": true
 }
