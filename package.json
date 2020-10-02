@@ -29,7 +29,7 @@
     "airbrake-js": "^1.4.2",
     "angularfire2": "5.0.0-rc.6",
     "braces": "2.3.2",
-    "firebase": "4.12.1",
+    "firebase": "7.22.0",
     "intl": "^1.2.5",
     "ionic-angular": "3.9.2",
     "ionic2-calendar": "^0.4.4",
